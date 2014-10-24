@@ -1,0 +1,4 @@
+1.¸Ä×Ôlibzdb
+2.ÒÀÀµpthread
+3.ÒÀÀµsqlite
+4.ÒÀÀµoci£¬libmysql
