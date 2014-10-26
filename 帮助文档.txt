@@ -1,4 +1,4 @@
-1.¸Ä×Ôlibzdb
-2.ÒÀÀµpthread
-3.ÒÀÀµsqlite
-4.ÒÀÀµoci£¬libmysql
+ï»¿1.æ”¹è‡ªlibzdb
+2.ä¾èµ–pthread
+3.ä¾èµ–sqlite
+4.ä¾èµ–ociï¼Œlibmysql
