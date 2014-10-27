@@ -28,7 +28,7 @@
 
 #if defined(_MSC_VER) && !defined(gmtime_r)
 #include <time.h>
-#define gmtime_r(a, b) gmtime_s(b, a)
+#define gmtime_r(a, b) gmtime_s((b), (a))
 #endif
 
 //#if defined(_MSC_VER) && !defined(_WINSOCK2API_)
