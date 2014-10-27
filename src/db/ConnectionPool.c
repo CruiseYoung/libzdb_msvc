@@ -305,7 +305,11 @@ void ConnectionPool_stop(T P) {
                 if (P->filled) {
                         _drainPool(P);
                         P->filled = false;
-                        stopSweep = (P->doSweep && P->reaper.x);
+						#ifndef _WIN32
+                        stopSweep = (P->doSweep && P->reaper);
+						#else
+						stopSweep = (P->doSweep && P->reaper.p);
+						#endif // !_WIN32
                         Connection_onstop(P);
                 }
         }
