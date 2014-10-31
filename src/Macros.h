@@ -1,6 +1,10 @@
 #ifndef MACROS_INCLUDED
 #define MACROS_INCLUDED
 
+/************************************************************************/
+/*   be used head file                                                                               */
+/************************************************************************/
+
 /* ---------------------------------------------------------- Build macros */
 
 
@@ -9,21 +13,25 @@
 #define __attribute__(x)
 #endif
 
-#if defined(_MSC_VER) && !defined(__func__)
-#define __func__ __FUNCTION__
-#endif
-
-#if defined(_MSC_VER) && !defined(snprintf)
-#define snprintf _snprintf
-#endif
-
 #if defined(_MSC_VER) && !defined(inline)
 #define inline __inline
 #endif
 
+#if defined(_MSC_VER) && !defined(__func__)
+#define __func__ __FUNCTION__
+#endif
+
+
+/************************************************************************/
+/*   be used Implementation file                                                               */
+/************************************************************************/
 #ifdef _WIN32
 #include <stdint.h>
 #include <inttypes.h>
+#endif
+
+#if defined(_MSC_VER) && !defined(snprintf)
+#define snprintf _snprintf
 #endif
 
 #if defined(_MSC_VER) && !defined(gmtime_r)
@@ -31,7 +39,16 @@
 #define gmtime_r(a, b) gmtime_s((b), (a))
 #endif
 
-//#if defined(_MSC_VER) && !defined(_WINSOCK2API_)
+#if defined(_MSC_VER) && !defined(suseconds_t)
+#define suseconds_t long
+#endif
+
+//#if !defined(sleep) && !defined(sleep)
+//#include <windows.h> // Sleep
+//#define sleep Sleep
+
+
+//#endif//#if defined(_MSC_VER) && !defined(_WINSOCK2API_)
 ///*
 //* Structure used in select() call, taken from the BSD file sys/time.h.
 //*/
@@ -41,21 +58,12 @@
 //};
 //#endif
 
-#if defined(_MSC_VER) && !defined(suseconds_t)
-#define suseconds_t long
-#endif
 
 #if defined(_MSC_VER)
-#include <time.h>
-#include <WinSock2.h>
-//#pragma comment(lib, "ws2_32.lib") // select(0, 0, 0, 0, &t);
-#include <windows.h> //I've ommited this line.
+#include <WinSock2.h>               // struct timeval
+//#pragma comment(lib, "ws2_32.lib")  // release need select(0, 0, 0, 0, &t); 
 
-
-//#if !defined(sleep)
-//#define sleep Sleep
-//#endif
-
+//#include <time.h>                   // struct timezone
 struct timezone
 {
     int  tz_minuteswest; /* minutes west of Greenwich */
