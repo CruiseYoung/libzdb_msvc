@@ -110,7 +110,7 @@ static const uchar_t urlunsafe[256] = {
 
 static int parseURL(T U) {
         param_t param = NULL;
-	#line 122 "src/net/URL.re"
+	#line 109 /*116*/ "src/net/URL.re"
 
 proto:
 	if (YYCURSOR >= YYLIMIT)
@@ -190,7 +190,7 @@ proto:
 	}
 yy2:
 	++YYCURSOR;
-#line 129 "src/net/URL.re"
+#line 133 "src/net/URL.re"
 	{
                         goto proto;
 		   }
@@ -210,7 +210,7 @@ yy4:
 		}
 	}
 yy5:
-#line 149 "src/net/URL.re"
+#line 153 "src/net/URL.re"
 	{
                       	goto proto;
                    }
@@ -284,7 +284,7 @@ yy14:
 	yych = *++YYCURSOR;
 	if (yych != '/') goto yy11;
 	++YYCURSOR;
-#line 145 "src/net/URL.re"
+#line 149 "src/net/URL.re"
 	{
                       	SET_PROTOCOL(UNKNOWN_PORT);
                    }
@@ -305,7 +305,7 @@ yy17:
 	yych = *++YYCURSOR;
 	if (yych != '/') goto yy11;
 	++YYCURSOR;
-#line 141 "src/net/URL.re"
+#line 145 "src/net/URL.re"
 	{
                       	SET_PROTOCOL(ORACLE_DEFAULT_PORT);
                    }
@@ -334,7 +334,7 @@ yy26:
 	yych = *++YYCURSOR;
 	if (yych != '/') goto yy11;
 	++YYCURSOR;
-#line 137 "src/net/URL.re"
+#line 141 "src/net/URL.re"
 	{
                       	SET_PROTOCOL(POSTGRESQL_DEFAULT_PORT);
                    }
@@ -353,13 +353,13 @@ yy39:
 	yych = *++YYCURSOR;
 	if (yych != '/') goto yy11;
 	++YYCURSOR;
-#line 133 "src/net/URL.re"
+#line 137 "src/net/URL.re"
 	{
                       	SET_PROTOCOL(MYSQL_DEFAULT_PORT);
                    }
 #line 361 "<stdout>"
 }
-#line 152 "src/net/URL.re"
+#line 157 "src/net/URL.re"
 
 authority:
 	if (YYCURSOR >= YYLIMIT)
@@ -440,7 +440,7 @@ authority:
 yy49:
 	++YYCURSOR;
 yy50:
-#line 159 "src/net/URL.re"
+#line 163 "src/net/URL.re"
 	{ 
                         goto authority; 
                    }
@@ -455,7 +455,7 @@ yy52:
 	yych = *(YYMARKER = ++YYCURSOR);
 	if (yych >= ' ') goto yy66;
 yy53:
-#line 197 "src/net/URL.re"
+#line 208 "src/net/URL.re"
 	{
                       	return true;
                    }
@@ -470,7 +470,7 @@ yy54:
 	if (yych == '.') goto yy76;
 	goto yy66;
 yy55:
-#line 175 "src/net/URL.re"
+#line 185 "src/net/URL.re"
 	{
                         U->host = Str_ndup(YYTOKEN, (int)(YYCURSOR - YYTOKEN));
                         goto authority; 
@@ -487,7 +487,7 @@ yy56:
 	if (yych <= '?') goto yy71;
 	goto yy70;
 yy57:
-#line 185 "src/net/URL.re"
+#line 196 "src/net/URL.re"
 	{
                         *YYCURSOR = 0;
                         U->path = URL_unescape(YYTOKEN);
@@ -517,7 +517,7 @@ yy60:
 	if (yych == '@') goto yy63;
 	goto yy65;
 yy62:
-#line 180 "src/net/URL.re"
+#line 190 "src/net/URL.re"
 	{
                         U->port = Str_parseInt(YYTOKEN + 1); // read past ':'
                         goto authority; 
@@ -526,7 +526,7 @@ yy62:
 yy63:
 	++YYCURSOR;
 yy64:
-#line 163 "src/net/URL.re"
+#line 167 "src/net/URL.re"
 	{
                         *(YYCURSOR - 1) = 0;
                         U->user = YYTOKEN;
@@ -597,7 +597,7 @@ yy71:
 	yych = *(YYMARKER = ++YYCURSOR);
 	if (yych >= ' ') goto yy66;
 yy72:
-#line 191 "src/net/URL.re"
+#line 202 "src/net/URL.re"
 	{
                         *(YYCURSOR-1) = 0;
                         U->path = URL_unescape(YYTOKEN);
@@ -682,7 +682,7 @@ yy79:
 		}
 	}
 }
-#line 201 "src/net/URL.re"
+#line 212 "src/net/URL.re"
 
 query:
         if (YYCURSOR >= YYLIMIT)
@@ -732,7 +732,7 @@ query:
 	if (yych == '#') goto yy85;
 	goto yy84;
 yy83:
-#line 208 "src/net/URL.re"
+#line 218 "src/net/URL.re"
 	{
                         *YYCURSOR = 0;
                         U->query = Str_ndup(YYTOKEN, (int)(YYCURSOR - YYTOKEN));
@@ -745,7 +745,7 @@ yy84:
 	goto yy88;
 yy85:
 	++YYCURSOR;
-#line 215 "src/net/URL.re"
+#line 225 "src/net/URL.re"
 	{ 
                       return true;     
                    }
@@ -760,7 +760,7 @@ yy88:
 	}
 	goto yy83;
 }
-#line 219 "src/net/URL.re"
+#line 229 "src/net/URL.re"
 
 params:
 	if (YYCURSOR >= YYLIMIT)
@@ -813,7 +813,7 @@ params:
 	yych = *YYCURSOR;
 	goto yy103;
 yy92:
-#line 226 "src/net/URL.re"
+#line 235 "src/net/URL.re"
 	{
                 /* No parameters in querystring */
                 return true;
@@ -824,7 +824,7 @@ yy93:
 	yych = *YYCURSOR;
 	goto yy98;
 yy94:
-#line 239 "src/net/URL.re"
+#line 243 "src/net/URL.re"
 	{
                 *YYTOKEN++ = 0;
                 if (*(YYCURSOR - 1) == '&')
@@ -837,7 +837,7 @@ yy94:
 #line 838 "<stdout>"
 yy95:
 	++YYCURSOR;
-#line 249 "src/net/URL.re"
+#line 253 "src/net/URL.re"
 	{ 
                 return true;
         }
@@ -856,7 +856,7 @@ yy98:
 yy100:
 	++YYCURSOR;
 	YYCURSOR = YYCTXMARKER;
-#line 231 "src/net/URL.re"
+#line 235 "src/net/URL.re"
 	{
                 NEW(param);
                 param->name = YYTOKEN;
@@ -877,7 +877,7 @@ yy103:
 	if (yych <= '<') goto yy92;
 	goto yy100;
 }
-#line 252 "src/net/URL.re"
+#line 257 "src/net/URL.re"
 
         return false;
 }

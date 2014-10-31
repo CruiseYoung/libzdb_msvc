@@ -236,7 +236,7 @@ struct tm *Time_toDateTime(const char *s, struct tm *t) {
 	if (yych <= '/') goto yy3;
 	if (yych <= '9') goto yy15;
 yy3:
-#line 241 "src/system/Time.re"
+#line 243 "src/system/Time.re"
 	{
                         continue;
                  }
@@ -277,7 +277,7 @@ yy8:
 	if (yych <= '9') goto yy11;
 	goto yy10;
 yy9:
-#line 228 "src/system/Time.re"
+#line 230 "src/system/Time.re"
 	{ // Timezone: +-HH:MM, +-HH or +-HHMM is offset from UTC in seconds
                         if (has_time) { // Only set timezone if time has been seen
                                 tm.TM_GMTOFF = a2i(token + 1, 2) * 3600;
@@ -340,7 +340,7 @@ yy20:
 	yych = *(marker = ++cursor);
 	if (yych == '.') goto yy24;
 yy23:
-#line 212 "src/system/Time.re"
+#line 214 "src/system/Time.re"
 	{ // Time: HH:MM:SS
                         tm.tm_hour = a2i(token, 2);
                         tm.tm_min  = a2i(token + 3, 2);
@@ -381,7 +381,7 @@ yy29:
 	if (yych <= '/') goto yy31;
 	if (yych <= '9') goto yy32;
 yy31:
-#line 220 "src/system/Time.re"
+#line 222 "src/system/Time.re"
 	{ // Compressed Time: HHMMSS
                         tm.tm_hour = a2i(token, 2);
                         tm.tm_min  = a2i(token + 2, 2);
@@ -407,7 +407,7 @@ yy34:
 	goto yy31;
 yy36:
 	++cursor;
-#line 204 "src/system/Time.re"
+#line 206 "src/system/Time.re"
 	{ // Compressed Date: YYYYMMDD
                         tm.tm_year  = a2i(token, 4);
                         tm.tm_mon   = a2i(token + 4, 2) - 1;
@@ -431,7 +431,7 @@ yy40:
 	if (yych <= '/') goto yy7;
 	if (yych >= ':') goto yy7;
 	++cursor;
-#line 196 "src/system/Time.re"
+#line 198 "src/system/Time.re"
 	{ // Date: YYYY-MM-DD
                         tm.tm_year  = a2i(token, 4);
                         tm.tm_mon   = a2i(token + 5, 2) - 1;
@@ -441,7 +441,7 @@ yy40:
                  }
 #line 441 "<stdout>"
 }
-#line 244 "src/system/Time.re"
+#line 246 "src/system/Time.re"
 
         }
 	return NULL;
