@@ -18,7 +18,7 @@
 #include "AssertException.h"
 #include "SQLException.h"
 
-#if !defined(sleep)
+#if defined(_MSC_VER) && !defined(sleep)
 #define sleep Sleep
 #endif
 
