@@ -43,8 +43,16 @@ extern "C" {
 #define __attribute__(x)
 #endif
 
+#if defined(_MSC_VER) && !defined(inline)
+#define inline __inline
+#endif
+
+#if defined(_MSC_VER) && !defined(__func__)
+#define __func__ __FUNCTION__
+#endif
+
 /* libzdb API interfaces */
-#include "Config.h"
+//#include "Macros.h"
 #include <SQLException.h>
 #include <URL.h>
 #include <ResultSet.h>
