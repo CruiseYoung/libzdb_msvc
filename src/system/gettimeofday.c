@@ -2,9 +2,9 @@
 
 #if defined(_MSC_VER) && !defined(gettimeofday)
 
-//#include <time.h>
-//#include <WinSock2.h>
-//#include <windows.h> //I've ommited this line.
+#include <time.h> //_timezone, _daylight
+#include <WinSock2.h> // timeval
+#include <windows.h> //I've ommited this line.
 
 #if defined(_MSC_VER) || defined(_MSC_EXTENSIONS)
 #define DELTA_EPOCH_IN_MICROSECS  11644473600000000Ui64
