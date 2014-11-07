@@ -30,7 +30,7 @@
 #include <ctype.h>
 
 #include "StringBuffer.h"
-#include "AssertException.h" // release need
+#include "AssertException.h"    /* release need */
 
 
 /**
@@ -64,8 +64,7 @@ static inline void _append(T S, const char *s, va_list ap) {
                         S->used += n;
                         break;
                 }
-                else
-                {
+                else {
                     n = 0;
                 }
                 S->length += STRLEN + n;

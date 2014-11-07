@@ -28,7 +28,7 @@
 #include <stdio.h>
 #ifndef _WIN32
 #include <strings.h>
-#endif // !_WIN32
+#endif
 #include <string.h>
 #include <stdarg.h>
 #include <ctype.h>

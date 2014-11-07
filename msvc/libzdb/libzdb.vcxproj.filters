@@ -72,10 +72,8 @@
     </Filter>
     <Filter Include="源文件\db\sqlserver">
       <UniqueIdentifier>{f68dd346-5d4d-412f-993a-e7b8b7bc10fd}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\db\Connection.c">

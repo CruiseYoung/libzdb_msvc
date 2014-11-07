@@ -67,8 +67,7 @@ static void getSqlErr(T C,SQLHSTMT hstmt) {
 	while(SQLError(0,0,hstmt,szSQLSTATE,&nErr,msg,sizeof(msg),&cbmsg)==
 		SQL_SUCCESS)
 	{
-
-		wsprintf((char *)szData,"Error:\nSQLSTATE=%s,Native error=%ld,msg='%s'",szSQLSTATE,nErr,msg);
+        snprintf((char *)szData, sizeof(szData), "Error:\nSQLSTATE=%s,Native error=%ld,msg='%s'", szSQLSTATE, nErr, msg);
 		//MessageBox(NULL,(const char *)szData,"ODBC Error",MB_OK);
 		//return NULL;
 		//return strdup(szData);
@@ -330,8 +329,10 @@ PreparedStatement_T SqlServerConnection_prepareStatement(T C, const char *sql, v
 	C->lastError = SQLPrepare(hstmt,StringBuffer_toString(C->sb),strlen(StringBuffer_toString(C->sb))); 
 	//第三个参数与数组大小相同，而不是数据库列相同  
 
-	if(SQLSERVERSUCCESS(C->lastError))
-		return PreparedStatement_new(SqlServerPreparedStatement_new(C->db, hstmt, C->maxRows), (Pop_T)&sqlserverpops);
+    if (SQLSERVERSUCCESS(C->lastError)) {
+        int paramCount = 0;
+        return PreparedStatement_new(SqlServerPreparedStatement_new(C->db, hstmt, C->maxRows), (Pop_T)&sqlserverpops, paramCount);
+    }
 	else {
 		getSqlErr(C,hstmt);
 	}

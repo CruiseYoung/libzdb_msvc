@@ -52,13 +52,12 @@ extern "C" {
 #endif
 
 /* libzdb API interfaces */
-//#include "Macros.h"
-#include <SQLException.h>
-#include <URL.h>
-#include <ResultSet.h>
-#include <PreparedStatement.h>
-#include <Connection.h>
-#include <ConnectionPool.h>
+#include "exceptions/SQLException.h"
+#include "net/URL.h"
+#include "db/ResultSet.h"
+#include "db/PreparedStatement.h"
+#include "db/Connection.h"
+#include "db/ConnectionPool.h"
 
 #ifdef __cplusplus
 }

@@ -47,7 +47,7 @@
 #pragma GCC visibility push(hidden)
 #endif
 
-void *Mem_alloc(size_t/*long*/ size, const char *func, const char *file, int line){
+void *Mem_alloc(size_t size, const char *func, const char *file, int line){
 	assert(size > 0);
 	void *p = malloc(size);
 	if (! p)

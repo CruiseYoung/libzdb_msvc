@@ -13,9 +13,11 @@
 #define __attribute__(x)
 #endif
 
+
 #if defined(_MSC_VER) && !defined(inline)
 #define inline __inline
 #endif
+
 
 #if defined(_MSC_VER) && !defined(__func__)
 #define __func__ __FUNCTION__
@@ -30,28 +32,33 @@
 #include <inttypes.h>
 #endif
 
+
 #if defined(_MSC_VER) && !defined(snprintf)
 #define snprintf _snprintf
 #endif
+
 
 #if defined(_MSC_VER) && !defined(gmtime_r)
 #include <time.h>
 #define gmtime_r(a, b) gmtime_s((b), (a))
 #endif
 
+
 #if defined(_MSC_VER) && !defined(suseconds_t)
 #define suseconds_t long
 #endif
 
+
 //#if !defined(sleep) && !defined(sleep)
-//#include <windows.h> // Sleep
+//#include <windows.h>    /* Sleep */
 //#define sleep Sleep
+//#endif
 
 
-//#endif//#if defined(_MSC_VER) && !defined(_WINSOCK2API_)
-///*
-//* Structure used in select() call, taken from the BSD file sys/time.h.
-//*/
+/*
+* Structure used in select() call, taken from the BSD file sys/time.h.
+*/
+//#if defined(_MSC_VER) && !defined(_WINSOCK2API_)
 //struct timeval {
 //    long    tv_sec;         /* seconds */
 //    long    tv_usec;        /* and microseconds */
@@ -60,10 +67,10 @@
 
 
 #if defined(_MSC_VER)
-#include <WinSock2.h>               // struct timeval
-//#pragma comment(lib, "ws2_32.lib")  // release need select(0, 0, 0, 0, &t); 
+#include <WinSock2.h>               /* struct timeval */
+//#pragma comment(lib, "ws2_32.lib")  /* release need select(0, 0, 0, 0, &t);  */
 
-//#include <time.h>                   // struct timezone
+//#include <time.h>                   /* struct timezone */
 struct timezone
 {
     int  tz_minuteswest; /* minutes west of Greenwich */
@@ -72,5 +79,6 @@ struct timezone
 
 int gettimeofday(struct timeval *tv, struct timezone *tz);
 #endif
+
 
 #endif //!MACROS_INCLUDED

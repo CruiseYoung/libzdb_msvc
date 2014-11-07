@@ -40,7 +40,7 @@
 #include "Str.h"
 #include "system/System.h"
 #include "system/Time.h"
-#include "AssertException.h" // release need
+#include "AssertException.h"    /* release need */
 
 /**
  * Implementation of the Time interface

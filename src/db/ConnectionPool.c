@@ -309,7 +309,7 @@ void ConnectionPool_stop(T P) {
                         stopSweep = (P->doSweep && P->reaper);
 						#else
 						stopSweep = (P->doSweep && P->reaper.p);
-						#endif // !_WIN32
+						#endif
                         Connection_onstop(P);
                 }
         }

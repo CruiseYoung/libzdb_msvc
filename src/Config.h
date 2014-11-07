@@ -45,7 +45,20 @@
 #include "system/System.h"
 
 
+/* --------------------------------------------- Compile conditional macro*/
+
+
+#define HAVE_LIBMYSQLCLIENT
+//#define HAVE_LIBPQ
+//#define HAVE_LIBSQLITE3
+//#define HAVE_ORACLE
+#ifdef _WIN32
+#define HAVE_SQLSERVER
+#endif
+
+/* Version number of package */
 #define VERSION "3.1.0"
+
 
 /**
  * The libzdb URL

@@ -99,7 +99,7 @@
  * @exception AssertException if <code>n <= 0</code> 
  * @return a pointer to the allocated memory
  */
-void *Mem_alloc(size_t/*long*/ size, const char *func, const char *file, int line);
+void *Mem_alloc(size_t size, const char *func, const char *file, int line);
 
 
 /**

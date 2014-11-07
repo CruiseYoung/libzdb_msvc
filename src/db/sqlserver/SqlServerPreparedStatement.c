@@ -95,7 +95,7 @@ static const char *SqlServerConnection_getLastError(void *stmt) {
 	while(SQLError(0,0,stmt,szSQLSTATE,&nErr,msg,sizeof(msg),&cbmsg)==
 		SQL_SUCCESS)
 	{
-		wsprintf((char *)szData,"Error:\nSQLSTATE=%s,Native error=%ld,msg='%s'",szSQLSTATE,nErr,msg);
+        snprintf((char *)szData, sizeof(szData), "Error:\nSQLSTATE=%s,Native error=%ld,msg='%s'", szSQLSTATE, nErr, msg);
 		//MessageBox(NULL,(const char *)szData,"ODBC Error",MB_OK);
 		//return NULL;
 		//return strdup(szData);

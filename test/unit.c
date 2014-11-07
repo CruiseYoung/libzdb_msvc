@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #ifdef _WIN32
-#include <io.h> //open
+#include <io.h> /* open */
 #endif
 
 #include "Config.h"
