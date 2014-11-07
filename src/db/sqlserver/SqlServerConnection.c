@@ -327,7 +327,7 @@ PreparedStatement_T SqlServerConnection_prepareStatement(T C, const char *sql, v
 
 	C->lastError = SQLAllocStmt(C->db->hdbc,&hstmt);
 	C->lastError = SQLPrepare(hstmt,StringBuffer_toString(C->sb),strlen(StringBuffer_toString(C->sb))); 
-	//第三个参数与数组大小相同，而不是数据库列相同  
+	//The third argument with an array of the same size , but not the same database column  
 
     if (SQLSERVERSUCCESS(C->lastError)) {
         int paramCount = 0;

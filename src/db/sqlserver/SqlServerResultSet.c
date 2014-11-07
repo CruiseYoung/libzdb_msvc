@@ -79,7 +79,7 @@ typedef struct st_sqlserver_field {
 	SQLSMALLINT  name_length;
 	enum enum_field_types type;
 	char cannull;
-	SQLSMALLINT decimals;//小数点
+	SQLSMALLINT decimals;//Decimal point
 	void *extension;
 } SQLSERVER_FIELD;
 
@@ -300,7 +300,7 @@ const char *SqlServerResultSet_getString(T R, int columnIndex) {
 	case SQL_DECIMAL://DECIMAL(p,s) (1 <= p <= 15; s <= p).
 	case SQL_NUMERIC://NUMERIC(p,s) (1 <= p <= 15; s <= p).
 		break;
-	case SQL_FLOAT://数字 '1.1234567890123456789012345678901234567890' 超出了数字表示范围（最大精度为 38 位有效数字）。
+	case SQL_FLOAT://numeral '1.1234567890123456789012345678901234567890' Beyond the numbers indicate the range ( maximum precision of 38 significant digits )。
 	case SQL_DOUBLE:{
 		//double dd = *(double*)col->buffer;
 		

@@ -1,294 +1,294 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
+    <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="头文件">
+    <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="资源文件">
+    <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\db">
+    <Filter Include="Header Files\db">
       <UniqueIdentifier>{49476118-2edc-4792-8318-5bca62c3752c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\db\mysql">
+    <Filter Include="Header Files\db\mysql">
       <UniqueIdentifier>{42798977-8dd1-4299-a544-97f9686ecba9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\db\oracle">
+    <Filter Include="Header Files\db\oracle">
       <UniqueIdentifier>{d8315203-56fd-4d02-a624-e4496242fc22}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\db\postgresql">
+    <Filter Include="Header Files\db\postgresql">
       <UniqueIdentifier>{a17d61b2-f6e8-4927-a4ed-24eadaab5859}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\db\sqlite">
+    <Filter Include="Header Files\db\sqlite">
       <UniqueIdentifier>{81866ab9-abbe-42b6-bd23-d53a4d128faf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\exceptions">
+    <Filter Include="Header Files\exceptions">
       <UniqueIdentifier>{6066c63a-a8cb-4f5a-8b48-fdf547a47448}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\net">
+    <Filter Include="Header Files\net">
       <UniqueIdentifier>{ddd874c0-dd37-4957-a6ab-0275792dc3fe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\system">
+    <Filter Include="Header Files\system">
       <UniqueIdentifier>{c4b71883-1300-4eb8-b53f-46afcca4d674}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\util">
+    <Filter Include="Header Files\util">
       <UniqueIdentifier>{f1e2ffd2-a1fd-49c6-ac3e-0e042d0ce10e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\db">
+    <Filter Include="Source Files\db">
       <UniqueIdentifier>{b2539a17-2007-4249-8a77-b2eaf7525da2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\db\mysql">
+    <Filter Include="Source Files\db\mysql">
       <UniqueIdentifier>{982c95e4-fc51-477c-b351-76844b8c775c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\db\oracle">
+    <Filter Include="Source Files\db\oracle">
       <UniqueIdentifier>{484338e5-4881-4777-bd23-ab193fc64f08}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\db\postgresql">
+    <Filter Include="Source Files\db\postgresql">
       <UniqueIdentifier>{8a1851d6-319a-4aad-9120-64f7df0d62fe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\db\sqlite">
+    <Filter Include="Source Files\db\sqlite">
       <UniqueIdentifier>{9484e5e8-65e9-4303-bec8-4bd052aaea59}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\exceptions">
+    <Filter Include="Source Files\exceptions">
       <UniqueIdentifier>{fba3c013-8971-4387-b8bd-1b2b81c9b70d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\net">
+    <Filter Include="Source Files\net">
       <UniqueIdentifier>{a13def3f-6418-4423-b0c7-36158afa05b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\util">
+    <Filter Include="Source Files\util">
       <UniqueIdentifier>{dcb85293-7808-4108-932c-36ca1c5b3846}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\system">
+    <Filter Include="Source Files\system">
       <UniqueIdentifier>{a70e1938-2ce8-49f9-9a73-6e76343af39a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\db\sqlserver">
+    <Filter Include="Header Files\db\sqlserver">
       <UniqueIdentifier>{c6d1f323-4503-419c-9c06-a31a398b48a7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\db\sqlserver">
+    <Filter Include="Source Files\db\sqlserver">
       <UniqueIdentifier>{f68dd346-5d4d-412f-993a-e7b8b7bc10fd}</UniqueIdentifier>
       <ParseFiles>true</ParseFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\db\Connection.c">
-      <Filter>源文件\db</Filter>
+      <Filter>Source Files\db</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\ConnectionPool.c">
-      <Filter>源文件\db</Filter>
+      <Filter>Source Files\db</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\PreparedStatement.c">
-      <Filter>源文件\db</Filter>
+      <Filter>Source Files\db</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\ResultSet.c">
-      <Filter>源文件\db</Filter>
+      <Filter>Source Files\db</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\mysql\MysqlConnection.c">
-      <Filter>源文件\db\mysql</Filter>
+      <Filter>Source Files\db\mysql</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\mysql\MysqlPreparedStatement.c">
-      <Filter>源文件\db\mysql</Filter>
+      <Filter>Source Files\db\mysql</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\mysql\MysqlResultSet.c">
-      <Filter>源文件\db\mysql</Filter>
+      <Filter>Source Files\db\mysql</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\sqlite\SQLiteConnection.c">
-      <Filter>源文件\db\sqlite</Filter>
+      <Filter>Source Files\db\sqlite</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\sqlite\SQLitePreparedStatement.c">
-      <Filter>源文件\db\sqlite</Filter>
+      <Filter>Source Files\db\sqlite</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\sqlite\SQLiteResultSet.c">
-      <Filter>源文件\db\sqlite</Filter>
+      <Filter>Source Files\db\sqlite</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\postgresql\PostgresqlConnection.c">
-      <Filter>源文件\db\postgresql</Filter>
+      <Filter>Source Files\db\postgresql</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\postgresql\PostgresqlPreparedStatement.c">
-      <Filter>源文件\db\postgresql</Filter>
+      <Filter>Source Files\db\postgresql</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\postgresql\PostgresqlResultSet.c">
-      <Filter>源文件\db\postgresql</Filter>
+      <Filter>Source Files\db\postgresql</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\oracle\OracleConnection.c">
-      <Filter>源文件\db\oracle</Filter>
+      <Filter>Source Files\db\oracle</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\oracle\OraclePreparedStatement.c">
-      <Filter>源文件\db\oracle</Filter>
+      <Filter>Source Files\db\oracle</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\oracle\OracleResultSet.c">
-      <Filter>源文件\db\oracle</Filter>
+      <Filter>Source Files\db\oracle</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\exceptions\assert.c">
-      <Filter>源文件\exceptions</Filter>
+      <Filter>Source Files\exceptions</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\exceptions\Exception.c">
-      <Filter>源文件\exceptions</Filter>
+      <Filter>Source Files\exceptions</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\net\URL.c">
-      <Filter>源文件\net</Filter>
+      <Filter>Source Files\net</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\Str.c">
-      <Filter>源文件\util</Filter>
+      <Filter>Source Files\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\StringBuffer.c">
-      <Filter>源文件\util</Filter>
+      <Filter>Source Files\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\util\Vector.c">
-      <Filter>源文件\util</Filter>
+      <Filter>Source Files\util</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\system\Mem.c">
-      <Filter>源文件\system</Filter>
+      <Filter>Source Files\system</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\system\System.c">
-      <Filter>源文件\system</Filter>
+      <Filter>Source Files\system</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\system\Time.c">
-      <Filter>源文件\system</Filter>
+      <Filter>Source Files\system</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\sqlserver\SqlServerConnection.c">
-      <Filter>源文件\db\sqlserver</Filter>
+      <Filter>Source Files\db\sqlserver</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\sqlserver\SqlServerPreparedStatement.c">
-      <Filter>源文件\db\sqlserver</Filter>
+      <Filter>Source Files\db\sqlserver</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\sqlserver\SqlServerResultSet.c">
-      <Filter>源文件\db\sqlserver</Filter>
+      <Filter>Source Files\db\sqlserver</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\system\gettimeofday.c">
-      <Filter>源文件\system</Filter>
+      <Filter>Source Files\system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\system\Time.re">
-      <Filter>源文件\system</Filter>
+      <Filter>Source Files\system</Filter>
     </None>
     <None Include="..\..\src\net\URL.re">
-      <Filter>源文件\net</Filter>
+      <Filter>Source Files\net</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\db\mysql\MysqlConnection.h">
-      <Filter>头文件\db\mysql</Filter>
+      <Filter>Header Files\db\mysql</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\mysql\MysqlPreparedStatement.h">
-      <Filter>头文件\db\mysql</Filter>
+      <Filter>Header Files\db\mysql</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\mysql\MysqlResultSet.h">
-      <Filter>头文件\db\mysql</Filter>
+      <Filter>Header Files\db\mysql</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\oracle\OracleConnection.h">
-      <Filter>头文件\db\oracle</Filter>
+      <Filter>Header Files\db\oracle</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\oracle\OraclePreparedStatement.h">
-      <Filter>头文件\db\oracle</Filter>
+      <Filter>Header Files\db\oracle</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\oracle\OracleResultSet.h">
-      <Filter>头文件\db\oracle</Filter>
+      <Filter>Header Files\db\oracle</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\postgresql\PostgresqlConnection.h">
-      <Filter>头文件\db\postgresql</Filter>
+      <Filter>Header Files\db\postgresql</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\postgresql\PostgresqlPreparedStatement.h">
-      <Filter>头文件\db\postgresql</Filter>
+      <Filter>Header Files\db\postgresql</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\postgresql\PostgresqlResultSet.h">
-      <Filter>头文件\db\postgresql</Filter>
+      <Filter>Header Files\db\postgresql</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlite\SQLiteConnection.h">
-      <Filter>头文件\db\sqlite</Filter>
+      <Filter>Header Files\db\sqlite</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlite\SQLitePreparedStatement.h">
-      <Filter>头文件\db\sqlite</Filter>
+      <Filter>Header Files\db\sqlite</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlite\SQLiteResultSet.h">
-      <Filter>头文件\db\sqlite</Filter>
+      <Filter>Header Files\db\sqlite</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlserver\SqlServerConnection.h">
-      <Filter>头文件\db\sqlserver</Filter>
+      <Filter>Header Files\db\sqlserver</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlserver\Sqlserverpreparedstatement.h">
-      <Filter>头文件\db\sqlserver</Filter>
+      <Filter>Header Files\db\sqlserver</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlserver\SqlServerResultSet.h">
-      <Filter>头文件\db\sqlserver</Filter>
+      <Filter>Header Files\db\sqlserver</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\Connection.h">
-      <Filter>头文件\db</Filter>
+      <Filter>Header Files\db</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\ConnectionDelegate.h">
-      <Filter>头文件\db</Filter>
+      <Filter>Header Files\db</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\ConnectionPool.h">
-      <Filter>头文件\db</Filter>
+      <Filter>Header Files\db</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\PreparedStatement.h">
-      <Filter>头文件\db</Filter>
+      <Filter>Header Files\db</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\PreparedStatementDelegate.h">
-      <Filter>头文件\db</Filter>
+      <Filter>Header Files\db</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\ResultSet.h">
-      <Filter>头文件\db</Filter>
+      <Filter>Header Files\db</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\ResultSetDelegate.h">
-      <Filter>头文件\db</Filter>
+      <Filter>Header Files\db</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\exceptions\assert.h">
-      <Filter>头文件\exceptions</Filter>
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\exceptions\AssertException.h">
-      <Filter>头文件\exceptions</Filter>
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\exceptions\Exception.h">
-      <Filter>头文件\exceptions</Filter>
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\exceptions\MemoryException.h">
-      <Filter>头文件\exceptions</Filter>
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\exceptions\SQLException.h">
-      <Filter>头文件\exceptions</Filter>
+      <Filter>Header Files\exceptions</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\net\URL.h">
-      <Filter>头文件\net</Filter>
+      <Filter>Header Files\net</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\system\Mem.h">
-      <Filter>头文件\system</Filter>
+      <Filter>Header Files\system</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\system\System.h">
-      <Filter>头文件\system</Filter>
+      <Filter>Header Files\system</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\system\Time.h">
-      <Filter>头文件\system</Filter>
+      <Filter>Header Files\system</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\util\Str.h">
-      <Filter>头文件\util</Filter>
+      <Filter>Header Files\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\util\StringBuffer.h">
-      <Filter>头文件\util</Filter>
+      <Filter>Header Files\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\util\Vector.h">
-      <Filter>头文件\util</Filter>
+      <Filter>Header Files\util</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Config.h">
-      <Filter>头文件</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Thread.h">
-      <Filter>头文件</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\zdb.h">
-      <Filter>头文件</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Macros.h">
-      <Filter>头文件</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\xconfig.h">
-      <Filter>头文件</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
