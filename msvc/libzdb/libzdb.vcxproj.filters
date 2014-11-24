@@ -18,15 +18,19 @@
     </Filter>
     <Filter Include="Header Files\db\mysql">
       <UniqueIdentifier>{42798977-8dd1-4299-a544-97f9686ecba9}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Header Files\db\oracle">
       <UniqueIdentifier>{d8315203-56fd-4d02-a624-e4496242fc22}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Header Files\db\postgresql">
       <UniqueIdentifier>{a17d61b2-f6e8-4927-a4ed-24eadaab5859}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Header Files\db\sqlite">
       <UniqueIdentifier>{81866ab9-abbe-42b6-bd23-d53a4d128faf}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Header Files\exceptions">
       <UniqueIdentifier>{6066c63a-a8cb-4f5a-8b48-fdf547a47448}</UniqueIdentifier>
@@ -45,15 +49,19 @@
     </Filter>
     <Filter Include="Source Files\db\mysql">
       <UniqueIdentifier>{982c95e4-fc51-477c-b351-76844b8c775c}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Source Files\db\oracle">
       <UniqueIdentifier>{484338e5-4881-4777-bd23-ab193fc64f08}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Source Files\db\postgresql">
       <UniqueIdentifier>{8a1851d6-319a-4aad-9120-64f7df0d62fe}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Source Files\db\sqlite">
       <UniqueIdentifier>{9484e5e8-65e9-4303-bec8-4bd052aaea59}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
     </Filter>
     <Filter Include="Source Files\exceptions">
       <UniqueIdentifier>{fba3c013-8971-4387-b8bd-1b2b81c9b70d}</UniqueIdentifier>
@@ -69,13 +77,10 @@
     </Filter>
     <Filter Include="Header Files\db\sqlserver">
       <UniqueIdentifier>{c6d1f323-4503-419c-9c06-a31a398b48a7}</UniqueIdentifier>
-      <ParseFiles>true</ParseFiles>
-      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Source Files\db\sqlserver">
       <UniqueIdentifier>{f68dd346-5d4d-412f-993a-e7b8b7bc10fd}</UniqueIdentifier>
       <ParseFiles>true</ParseFiles>
-      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,33 +95,6 @@
     </ClCompile>
     <ClCompile Include="..\..\src\db\ResultSet.c">
       <Filter>Source Files\db</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\sqlite\SQLiteConnection.c">
-      <Filter>Source Files\db\sqlite</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\sqlite\SQLitePreparedStatement.c">
-      <Filter>Source Files\db\sqlite</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\sqlite\SQLiteResultSet.c">
-      <Filter>Source Files\db\sqlite</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\postgresql\PostgresqlConnection.c">
-      <Filter>Source Files\db\postgresql</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\postgresql\PostgresqlPreparedStatement.c">
-      <Filter>Source Files\db\postgresql</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\postgresql\PostgresqlResultSet.c">
-      <Filter>Source Files\db\postgresql</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\oracle\OracleConnection.c">
-      <Filter>Source Files\db\oracle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\oracle\OraclePreparedStatement.c">
-      <Filter>Source Files\db\oracle</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\oracle\OracleResultSet.c">
-      <Filter>Source Files\db\oracle</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\exceptions\assert.c">
       <Filter>Source Files\exceptions</Filter>
@@ -148,15 +126,6 @@
     <ClCompile Include="..\..\src\system\gettimeofday.c">
       <Filter>Source Files\system</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\db\mysql\MysqlConnection.c">
-      <Filter>Source Files\db\mysql</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\mysql\MysqlPreparedStatement.c">
-      <Filter>Source Files\db\mysql</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\mysql\MysqlResultSet.c">
-      <Filter>Source Files\db\mysql</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\db\sqlserver\SqlServerConnection.c">
       <Filter>Source Files\db\sqlserver</Filter>
     </ClCompile>
@@ -166,35 +135,44 @@
     <ClCompile Include="..\..\src\db\sqlserver\SqlServerResultSet.c">
       <Filter>Source Files\db\sqlserver</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\db\oracle\OracleConnection.c">
+      <Filter>Source Files\db\oracle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\oracle\OraclePreparedStatement.c">
+      <Filter>Source Files\db\oracle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\oracle\OracleResultSet.c">
+      <Filter>Source Files\db\oracle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\postgresql\PostgresqlConnection.c">
+      <Filter>Source Files\db\postgresql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\postgresql\PostgresqlPreparedStatement.c">
+      <Filter>Source Files\db\postgresql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\postgresql\PostgresqlResultSet.c">
+      <Filter>Source Files\db\postgresql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlite\SQLiteConnection.c">
+      <Filter>Source Files\db\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlite\SQLitePreparedStatement.c">
+      <Filter>Source Files\db\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlite\SQLiteResultSet.c">
+      <Filter>Source Files\db\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlConnection.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlPreparedStatement.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlResultSet.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\db\oracle\OracleConnection.h">
-      <Filter>Header Files\db\oracle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\oracle\OraclePreparedStatement.h">
-      <Filter>Header Files\db\oracle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\oracle\OracleResultSet.h">
-      <Filter>Header Files\db\oracle</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\postgresql\PostgresqlConnection.h">
-      <Filter>Header Files\db\postgresql</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\postgresql\PostgresqlPreparedStatement.h">
-      <Filter>Header Files\db\postgresql</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\postgresql\PostgresqlResultSet.h">
-      <Filter>Header Files\db\postgresql</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\sqlite\SQLiteConnection.h">
-      <Filter>Header Files\db\sqlite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\sqlite\SQLitePreparedStatement.h">
-      <Filter>Header Files\db\sqlite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\sqlite\SQLiteResultSet.h">
-      <Filter>Header Files\db\sqlite</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\db\Connection.h">
       <Filter>Header Files\db</Filter>
     </ClInclude>
@@ -267,15 +245,6 @@
     <ClInclude Include="..\..\src\xconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\db\mysql\MysqlConnection.h">
-      <Filter>Header Files\db\mysql</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\mysql\MysqlPreparedStatement.h">
-      <Filter>Header Files\db\mysql</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\mysql\MysqlResultSet.h">
-      <Filter>Header Files\db\mysql</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\db\sqlserver\SqlServerConnection.h">
       <Filter>Header Files\db\sqlserver</Filter>
     </ClInclude>
@@ -284,6 +253,42 @@
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlserver\SqlServerResultSet.h">
       <Filter>Header Files\db\sqlserver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\oracle\OracleConnection.h">
+      <Filter>Header Files\db\oracle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\oracle\OraclePreparedStatement.h">
+      <Filter>Header Files\db\oracle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\oracle\OracleResultSet.h">
+      <Filter>Header Files\db\oracle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\postgresql\PostgresqlConnection.h">
+      <Filter>Header Files\db\postgresql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\postgresql\PostgresqlPreparedStatement.h">
+      <Filter>Header Files\db\postgresql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\postgresql\PostgresqlResultSet.h">
+      <Filter>Header Files\db\postgresql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\sqlite\SQLiteConnection.h">
+      <Filter>Header Files\db\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\sqlite\SQLitePreparedStatement.h">
+      <Filter>Header Files\db\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\sqlite\SQLiteResultSet.h">
+      <Filter>Header Files\db\sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\mysql\MysqlConnection.h">
+      <Filter>Header Files\db\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\mysql\MysqlPreparedStatement.h">
+      <Filter>Header Files\db\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\mysql\MysqlResultSet.h">
+      <Filter>Header Files\db\mysql</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
