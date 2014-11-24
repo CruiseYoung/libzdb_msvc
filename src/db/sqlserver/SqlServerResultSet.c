@@ -83,11 +83,11 @@ typedef struct SqlServer_Field_S {
 	void *extension;
 } ;
 
-typedef struct odbc_column_s {
+typedef struct column_t {
     struct SqlServer_Field_S field;
 	SQLLEN  real_length;
 	char *buffer;
-} *odbc_column_t;
+} *column_t;
 
 struct T {
 	int keep;
@@ -95,7 +95,7 @@ struct T {
 	int currentRow;
 	int columnCount;
 	SQLHSTMT stmt;
-	odbc_column_t columns;
+	column_t columns;
 } ;
 
 #define TEST_INDEX \
@@ -150,7 +150,7 @@ T SqlServerResultSet_new(void *stmt, int maxRows, int keep) {
 		SqlServerResultSet_free(&R);
 		return NULL;
 	}
-	R->columns = CALLOC(R->columnCount, sizeof (struct odbc_column_t));
+    R->columns = CALLOC(R->columnCount, sizeof(struct column_t));
 
 	for(i = 1; i <= R->columnCount; i++) {
 		SQLSMALLINT ftype;
@@ -270,7 +270,7 @@ int SqlServerResultSet_next(T R) {
 
 
 long SqlServerResultSet_getColumnSize(T R, int columnIndex) {
-	struct odbc_column_t* col;
+	struct column_t* col;
 	TEST_INDEX
 	col =  &R->columns[i];
 	//	SQLNumResultCols(R->stmt,);
@@ -280,7 +280,7 @@ long SqlServerResultSet_getColumnSize(T R, int columnIndex) {
 
 
 const char *SqlServerResultSet_getString(T R, int columnIndex) {
-	struct odbc_column_t* col;
+	struct column_t* col;
 	TEST_INDEX
 		//return (const char*)SqlServer3_column_text(R->stmt, i);
 		col =  &R->columns[i];
