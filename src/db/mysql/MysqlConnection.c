@@ -241,16 +241,16 @@ int MysqlConnection_beginTransaction(T C) {
 
 int MysqlConnection_commit(T C) {
 	assert(C);
-        C->lastError = mysql_commit(C->db);
-        //C->lastError = mysql_query(C->db, "COMMIT;");
+        //C->lastError = mysql_commit(C->db);
+        C->lastError = mysql_query(C->db, "COMMIT;");
         return (C->lastError == MYSQL_OK);
 }
 
 
 int MysqlConnection_rollback(T C) {
 	assert(C);
-        C->lastError = mysql_rollback(C->db);
-        //C->lastError = mysql_query(C->db, "ROLLBACK;");
+        //C->lastError = mysql_rollback(C->db);
+        C->lastError = mysql_query(C->db, "ROLLBACK;");
         return (C->lastError == MYSQL_OK);
 }
 
