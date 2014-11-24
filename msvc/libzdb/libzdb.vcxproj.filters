@@ -165,14 +165,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\src\system\Time.re">
-      <Filter>Source Files\system</Filter>
-    </None>
-    <None Include="..\..\src\net\URL.re">
-      <Filter>Source Files\net</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\src\db\mysql\MysqlConnection.h">
       <Filter>Header Files\db\mysql</Filter>
     </ClInclude>
