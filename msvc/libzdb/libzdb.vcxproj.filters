@@ -69,10 +69,13 @@
     </Filter>
     <Filter Include="Header Files\db\sqlserver">
       <UniqueIdentifier>{c6d1f323-4503-419c-9c06-a31a398b48a7}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
+      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Source Files\db\sqlserver">
       <UniqueIdentifier>{f68dd346-5d4d-412f-993a-e7b8b7bc10fd}</UniqueIdentifier>
       <ParseFiles>true</ParseFiles>
+      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -87,15 +90,6 @@
     </ClCompile>
     <ClCompile Include="..\..\src\db\ResultSet.c">
       <Filter>Source Files\db</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\mysql\MysqlConnection.c">
-      <Filter>Source Files\db\mysql</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\mysql\MysqlPreparedStatement.c">
-      <Filter>Source Files\db\mysql</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\db\mysql\MysqlResultSet.c">
-      <Filter>Source Files\db\mysql</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\db\sqlite\SQLiteConnection.c">
       <Filter>Source Files\db\sqlite</Filter>
@@ -151,6 +145,18 @@
     <ClCompile Include="..\..\src\system\Time.c">
       <Filter>Source Files\system</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\system\gettimeofday.c">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlConnection.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlPreparedStatement.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlResultSet.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\db\sqlserver\SqlServerConnection.c">
       <Filter>Source Files\db\sqlserver</Filter>
     </ClCompile>
@@ -160,20 +166,8 @@
     <ClCompile Include="..\..\src\db\sqlserver\SqlServerResultSet.c">
       <Filter>Source Files\db\sqlserver</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\system\gettimeofday.c">
-      <Filter>Source Files\system</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\db\mysql\MysqlConnection.h">
-      <Filter>Header Files\db\mysql</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\mysql\MysqlPreparedStatement.h">
-      <Filter>Header Files\db\mysql</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\mysql\MysqlResultSet.h">
-      <Filter>Header Files\db\mysql</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\db\oracle\OracleConnection.h">
       <Filter>Header Files\db\oracle</Filter>
     </ClInclude>
@@ -200,15 +194,6 @@
     </ClInclude>
     <ClInclude Include="..\..\src\db\sqlite\SQLiteResultSet.h">
       <Filter>Header Files\db\sqlite</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\sqlserver\SqlServerConnection.h">
-      <Filter>Header Files\db\sqlserver</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\sqlserver\Sqlserverpreparedstatement.h">
-      <Filter>Header Files\db\sqlserver</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\db\sqlserver\SqlServerResultSet.h">
-      <Filter>Header Files\db\sqlserver</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\db\Connection.h">
       <Filter>Header Files\db</Filter>
@@ -281,6 +266,24 @@
     </ClInclude>
     <ClInclude Include="..\..\src\xconfig.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\mysql\MysqlConnection.h">
+      <Filter>Header Files\db\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\mysql\MysqlPreparedStatement.h">
+      <Filter>Header Files\db\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\mysql\MysqlResultSet.h">
+      <Filter>Header Files\db\mysql</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\sqlserver\SqlServerConnection.h">
+      <Filter>Header Files\db\sqlserver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\sqlserver\Sqlserverpreparedstatement.h">
+      <Filter>Header Files\db\sqlserver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\db\sqlserver\SqlServerResultSet.h">
+      <Filter>Header Files\db\sqlserver</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
