@@ -24,11 +24,11 @@
 #include <odbcss.h> 
 #include "Thread.h"
 
-typedef struct st_sqlserver
+typedef struct SqlServer_S
 {
 	SQLHENV henv;
 	SQLHDBC hdbc;
-}SQLSERVER;
+} *SqlServer_T;
 
 #define SQLSERVERSUCCESS(rc) ((rc==SQL_SUCCESS)||(rc==SQL_SUCCESS_WITH_INFO))
 

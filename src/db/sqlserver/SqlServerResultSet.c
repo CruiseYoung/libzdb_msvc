@@ -73,7 +73,7 @@ SQL_TYPE_BIGINT = -5,
 #endif
 };
 
-typedef struct st_sqlserver_field {
+typedef struct SqlServer_Field_S {
 	char name[256];
 	SQLUINTEGER  max_length;
 	SQLSMALLINT  name_length;
@@ -81,10 +81,10 @@ typedef struct st_sqlserver_field {
 	char cannull;
 	SQLSMALLINT decimals;//Decimal point
 	void *extension;
-} SQLSERVER_FIELD;
+} ;
 
-typedef struct odbc_column_t {
-	SQLSERVER_FIELD field;
+typedef struct odbc_column_s {
+    struct SqlServer_Field_S field;
 	SQLLEN  real_length;
 	char *buffer;
 } *odbc_column_t;
@@ -96,7 +96,7 @@ struct T {
 	int columnCount;
 	SQLHSTMT stmt;
 	odbc_column_t columns;
-};
+} ;
 
 #define TEST_INDEX \
 	int i; assert(R); i = columnIndex - 1; if (R->columnCount <= 0 || \

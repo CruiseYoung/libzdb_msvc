@@ -43,7 +43,7 @@
 #define T ConnectionDelegate_T
 struct T {
 	URL_T url;
-	SQLSERVER *db;
+	SqlServer_T db;
 	int maxRows;
 	int timeout;
 	int lastError;
@@ -84,9 +84,9 @@ static void onstop(void) {
 
 
 
-static SQLSERVER *doConnect(URL_T url, char **error) {
+static SqlServer_T doConnect(URL_T url, char **error) {
 	RETCODE retcode;
-	SQLSERVER *db = (SQLSERVER*)malloc(sizeof(SQLSERVER));
+	SqlServer_T db = (SqlServer_T)malloc(sizeof(struct SqlServer_S));
 
 	/*retcode   =   SQLAllocHandle   (SQL_HANDLE_ENV,   NULL,   &db->henv);      
 	retcode   =   SQLSetEnvAttr(db->henv,   SQL_ATTR_ODBC_VERSION,      
@@ -183,7 +183,7 @@ const struct Cop_T sqlservercops = {
 
 T SqlServerConnection_new(URL_T url, char **error) {
 	T C;
-	SQLSERVER *db;
+	SqlServer_T db;
 	assert(url);
 	assert(error);
 	if (! (db = doConnect(url, error)))

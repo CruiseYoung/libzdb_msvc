@@ -64,7 +64,7 @@ typedef struct param_t {
 
 #define T PreparedStatementDelegate_T
 struct T {
-        SQLSERVER *db;
+        SqlServer_T db;
         int maxRows;
         int lastError;
 		SQLSMALLINT paramCount;
@@ -105,7 +105,7 @@ static const char *SqlServerConnection_getLastError(void *stmt) {
 }
 #endif
 
-T SqlServerPreparedStatement_new(SQLSERVER *db, void *stmt, int maxRows) {
+T SqlServerPreparedStatement_new(SqlServer_T db, void *stmt, int maxRows) {
         T P;
         assert(stmt);
         NEW(P);

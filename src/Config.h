@@ -52,9 +52,8 @@
 //#define HAVE_LIBPQ
 //#define HAVE_LIBSQLITE3
 //#define HAVE_ORACLE
-#ifdef _WIN32
-#define HAVE_SQLSERVER
-#endif
+//#define HAVE_SQLSERVER
+
 
 /* Version number of package */
 #define VERSION "3.1.0"

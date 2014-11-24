@@ -16,7 +16,7 @@
 #ifndef SQLSERVERPREPAREDSTATEMENT_INCLUDED
 #define SQLSERVERPREPAREDSTATEMENT_INCLUDED
 #define T PreparedStatementDelegate_T
-T SqlServerPreparedStatement_new(SQLSERVER *db, void *stmt, int maxRows);
+T SqlServerPreparedStatement_new(SqlServer_T db, void *stmt, int maxRows);
 void SqlServerPreparedStatement_free(T *P);
 void SqlServerPreparedStatement_setString(T P, int parameterIndex, const char *x);
 void SqlServerPreparedStatement_setInt(T P, int parameterIndex, int x);
