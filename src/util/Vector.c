@@ -41,7 +41,7 @@
 
 
 #define T Vector_T
-struct T {
+struct Vector_S {
         int length;
         int capacity;
         void **array;
@@ -52,7 +52,7 @@ struct T {
 /* ------------------------------------------------------- Private methods */
 
 
-static inline void _ensureCapacity(T V) {
+static inline void _ensureCapacity_Vector(T V) {
         if (V->length >= V->capacity) {
                 V->capacity = 2 * V->length;
 		RESIZE(V->array, V->capacity * sizeof (void *));
@@ -90,7 +90,7 @@ void Vector_insert(T V, int i, void *e) {
 	assert(V);
 	assert(i >= 0 && i <= V->length);
 	V->timestamp++;
-        _ensureCapacity(V);
+    _ensureCapacity_Vector(V);
         for (int j = V->length++; j > i; j--)
                 V->array[j] = V->array[j-1];
         V->array[i] = e;
@@ -129,7 +129,7 @@ void *Vector_remove(T V, int i) {
 void Vector_push(T V, void *e) {
         assert(V);
 	V->timestamp++;
-        _ensureCapacity(V);
+    _ensureCapacity_Vector(V);
         V->array[V->length++] = e;
 }
 

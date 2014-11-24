@@ -47,7 +47,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-#define T Exception_T
+#define T struct Exception_S
 /* Placeholder for systems exceptions. */
 T SQLException = {"SQLException"};
 #ifdef ZILD_PACKAGE_PROTECTED

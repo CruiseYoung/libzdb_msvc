@@ -35,9 +35,9 @@
  */ 
 
 #define T ResultSetDelegate_T
-typedef struct T *T;
+typedef struct ResultSetDelegate_S *T;
 
-typedef struct Rop_T {
+typedef struct Rop_S {
         const char *name;
         void (*free)(T *R);
         int (*getColumnCount)(T R);

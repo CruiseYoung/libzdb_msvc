@@ -36,7 +36,7 @@
 
 
 #define T StringBuffer_T
-typedef struct T *T;
+typedef struct StringBuffer_S *T;
 
 
 /**

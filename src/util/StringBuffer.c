@@ -44,7 +44,7 @@
 
 
 #define T StringBuffer_T
-struct T {
+struct StringBuffer_S {
         int used;
         int length;
 	uchar_t *buffer;
@@ -74,7 +74,7 @@ static inline void _append(T S, const char *s, va_list ap) {
 
 
 /* Replace all occurences of ? in this string buffer with prefix[1..99] */
-static int _prepare(T S, char prefix) {
+static int _prepare_StringBuffer(T S, char prefix) {
         int n, i;
         for (n = i = 0; S->buffer[i]; i++) if (S->buffer[i] == '?') n++;
         if (n > 99)
@@ -210,13 +210,13 @@ const char *StringBuffer_toString(T S) {
 
 int StringBuffer_prepare4postgres(T S) {
         assert(S);
-        return _prepare(S, '$');
+        return _prepare_StringBuffer(S, '$');
 }
 
 
 int StringBuffer_prepare4oracle(T S) {
         assert(S);
-        return _prepare(S, ':');
+        return _prepare_StringBuffer(S, ':');
 }
 
 

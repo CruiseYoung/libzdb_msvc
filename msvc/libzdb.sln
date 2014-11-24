@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzdb", "libzdb\libzdb.vcxproj", "{EE3E5572-8333-4A7D-8711-FB9005C0C63E}"
 EndProject
@@ -24,6 +24,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestPool", "TestPool\TestPo
 	ProjectSection(ProjectDependencies) = postProject
 		{EE3E5572-8333-4A7D-8711-FB9005C0C63E} = {EE3E5572-8333-4A7D-8711-FB9005C0C63E}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzdb_unity", "libzdb_unity\libzdb_unity.vcxproj", "{8416EA28-F993-4552-B952-69008D803AF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,13 @@ Global
 		{BDB80CD7-2E55-4F63-B30D-41310E10D294}.Release|Win32.Build.0 = Release|Win32
 		{BDB80CD7-2E55-4F63-B30D-41310E10D294}.Release|x64.ActiveCfg = Release|x64
 		{BDB80CD7-2E55-4F63-B30D-41310E10D294}.Release|x64.Build.0 = Release|x64
+		{8416EA28-F993-4552-B952-69008D803AF7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8416EA28-F993-4552-B952-69008D803AF7}.Debug|Win32.Build.0 = Debug|Win32
+		{8416EA28-F993-4552-B952-69008D803AF7}.Debug|x64.ActiveCfg = Debug|x64
+		{8416EA28-F993-4552-B952-69008D803AF7}.Debug|x64.Build.0 = Debug|x64
+		{8416EA28-F993-4552-B952-69008D803AF7}.Release|Win32.ActiveCfg = Release|Win32
+		{8416EA28-F993-4552-B952-69008D803AF7}.Release|Win32.Build.0 = Release|Win32
+		{8416EA28-F993-4552-B952-69008D803AF7}.Release|x64.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

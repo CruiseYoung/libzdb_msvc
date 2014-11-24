@@ -47,11 +47,11 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-typedef struct param_t {
+typedef struct param_url_s {
         char *name;
         char *value;
-        struct param_t *next;
-} *param_t;
+        struct param_url_s *next;
+} *param_url_t;
 
 #define T URL_T
 struct URL_S {
@@ -66,7 +66,7 @@ struct URL_S {
 	char *protocol;
 	char *password;
 	char *toString;
-        param_t params;
+    param_url_t params;
         char **paramNames;
 	uchar_t *data;
 	uchar_t *buffer;
@@ -109,7 +109,7 @@ static const uchar_t urlunsafe[256] = {
 
 
 static int parseURL(T U) {
-        param_t param = NULL;
+    param_url_t param = NULL;
 	#line 116 /*109*/ "src/net/URL.re"
 
 proto:
@@ -901,8 +901,8 @@ static inline uchar_t *b2x(uchar_t b, uchar_t *x) {
 }
 
 
-static void freeParams(param_t p) {
-        for (param_t q = NULL; p; p = q) {
+static void freeParams(param_url_t p) {
+    for (param_url_t q = NULL; p; p = q) {
                 q = p->next;
                 FREE(p);
         }
@@ -1004,7 +1004,7 @@ const char *URL_getQueryString(T U) {
 const char **URL_getParameterNames(T U) {
         assert(U);
         if (U->params && (U->paramNames == NULL)) {
-                param_t p;
+            param_url_t p;
                 int i = 0, len = 0;
                 for (p = U->params; p; p = p->next) len++;
                 U->paramNames = ALLOC((len + 1) * sizeof *(U->paramNames));
@@ -1019,7 +1019,7 @@ const char **URL_getParameterNames(T U) {
 const char *URL_getParameter(T U, const char *name) {
 	assert(U);
         assert(name);
-        for (param_t p = U->params; p; p = p->next) {
+        for (param_url_t p = U->params; p; p = p->next) {
                 if (Str_isByteEqual(p->name, name))
                         return p->value;
         }

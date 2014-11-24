@@ -29,16 +29,16 @@
 
 
 #if defined SQLITEUNLOCK && SQLITE_VERSION_NUMBER >= 3006012
-/* SQLite unlock notify based synchronization */
-typedef struct UnlockNotification {
+/* SQLite unlock notify based synchronization */ 
+struct UnlockNotification_S {
         int fired;
         Sem_T cond;
         Mutex_T mutex;
-} UnlockNotification_T;
+};
 
 static inline void unlock_notify_cb(void **apArg, int nArg) {
         for (int i = 0; i < nArg; i++) {
-                UnlockNotification_T *p = (UnlockNotification_T *)apArg[i];
+            struct UnlockNotification_S *p = (struct UnlockNotification_S *)apArg[i];
                 Mutex_lock(p->mutex);
                 p->fired = 1;
                 Sem_signal(p->cond);
@@ -47,7 +47,7 @@ static inline void unlock_notify_cb(void **apArg, int nArg) {
 }
 
 static inline int wait_for_unlock_notify(sqlite3 *db){
-        UnlockNotification_T un;
+    struct UnlockNotification_S un;
         un.fired = 0;
         Mutex_init(un.mutex);
         Sem_init(un.cond);

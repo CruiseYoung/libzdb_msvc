@@ -17,10 +17,10 @@
 
 #define THREADS 50
 
-Exception_T A = {"AException"};
-Exception_T B = {"BException"};
-Exception_T C = {"CException"};
-Exception_T D = {"DException"};
+struct Exception_S A = { "AException" };
+struct Exception_S B = { "BException" };
+struct Exception_S C = { "CException" };
+struct Exception_S D = { "DException" };
 
 void throwA() {
         THROW(A, "A");

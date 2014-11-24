@@ -48,7 +48,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Pop_T postgresqlpops = {
+const struct Pop_S postgresqlpops = {
         .name           = "postgresql",
         .free           = PostgresqlPreparedStatement_free,
         .setString      = PostgresqlPreparedStatement_setString,
@@ -62,11 +62,12 @@ const struct Pop_T postgresqlpops = {
         .rowsChanged    = PostgresqlPreparedStatement_rowsChanged
 };
 
-typedef struct param_t {
+typedef struct param_s {
         char s[65];
 } *param_t;
+
 #define T PreparedStatementDelegate_T
-struct T {
+struct PreparedStatementDelegate_S {
         int maxRows;
         int lastError;
         char *stmt;
@@ -79,7 +80,7 @@ struct T {
         param_t params;
 };
 
-extern const struct Rop_T postgresqlrops;
+extern const struct Rop_S postgresqlrops;
 
 
 /* ----------------------------------------------------- Protected methods */
@@ -103,7 +104,7 @@ T PostgresqlPreparedStatement_new(PGconn *db, int maxRows, char *stmt, int param
                 P->paramValues = CALLOC(P->paramCount, sizeof(char *));
                 P->paramLengths = CALLOC(P->paramCount, sizeof(int));
                 P->paramFormats = CALLOC(P->paramCount, sizeof(int));
-                P->params = CALLOC(P->paramCount, sizeof(struct param_t));
+                P->params = CALLOC(P->paramCount, sizeof(struct param_s));
         }
         return P;
 }

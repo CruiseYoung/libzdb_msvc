@@ -47,7 +47,7 @@
 
 #define MYSQL_OK 0
 
-const struct Rop_T mysqlrops = {
+const struct Rop_S mysqlrops = {
 	.name           = "mysql",
         .free           = MysqlResultSet_free,
         .getColumnCount = MysqlResultSet_getColumnCount,
@@ -60,7 +60,7 @@ const struct Rop_T mysqlrops = {
         // getTimestamp and getDateTime is handled in ResultSet
 };
 
-typedef struct column_t {
+typedef struct column_s {
         my_bool is_null;
         MYSQL_FIELD *field;
         unsigned long real_length;
@@ -68,7 +68,7 @@ typedef struct column_t {
 } *column_t;
 
 #define T ResultSetDelegate_T
-struct T {
+struct ResultSetDelegate_S {
         int stop;
         int keep;
         int maxRows;
@@ -119,7 +119,7 @@ T MysqlResultSet_new(void *stmt, int maxRows, int keep) {
                 R->stop = true;
         } else {
                 R->bind = CALLOC(R->columnCount, sizeof (MYSQL_BIND));
-                R->columns = CALLOC(R->columnCount, sizeof (struct column_t));
+                R->columns = CALLOC(R->columnCount, sizeof (struct column_s));
                 for (int i = 0; i < R->columnCount; i++) {
                         R->columns[i].buffer = ALLOC(STRLEN + 1);
                         R->bind[i].buffer_type = MYSQL_TYPE_STRING;

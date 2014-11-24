@@ -34,9 +34,9 @@
  */ 
 
 #define T PreparedStatementDelegate_T
-typedef struct T *T;
+typedef struct PreparedStatementDelegate_S *T;
 
-typedef struct Pop_T {
+typedef struct Pop_S {
 	const char *name;
         void (*free)(T *P);
         void (*setString)(T P, int parameterIndex, const char *x);

@@ -41,7 +41,7 @@
 
 
 #define T Vector_T
-typedef struct T *T;
+typedef struct Vector_S *T;
 
 
 /**

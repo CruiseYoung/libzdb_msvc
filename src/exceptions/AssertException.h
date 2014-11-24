@@ -33,7 +33,7 @@
  * @see Exception.h
  * @file
  */
-extern Exception_T AssertException;
+extern struct Exception_S AssertException;
 
 
 #endif

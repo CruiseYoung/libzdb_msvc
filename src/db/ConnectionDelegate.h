@@ -35,9 +35,9 @@
  */ 
 
 #define T ConnectionDelegate_T
-typedef struct T *T;
+typedef struct ConnectionDelegate_S *T;
 
-typedef struct Cop_T {
+typedef struct Cop_S {
         const char *name;
         // Event handler class methods
         void (*onstop)(void);

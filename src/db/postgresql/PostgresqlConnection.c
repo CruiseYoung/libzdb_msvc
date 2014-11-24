@@ -49,7 +49,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Cop_T postgresqlcops = {
+const struct Cop_S postgresqlcops = {
         .name 		 	= "postgresql",
         .onstop 	 	= PostgresqlConnection_onstop,
         .new 		 	= PostgresqlConnection_new,
@@ -69,7 +69,7 @@ const struct Cop_T postgresqlcops = {
 };
 
 #define T ConnectionDelegate_T
-struct T {
+struct ConnectionDelegate_S {
         URL_T url;
 	PGconn *db;
 	PGresult *res;
@@ -79,8 +79,8 @@ struct T {
         StringBuffer_T sb;
 };
 static uint32_t statementid = 0;
-extern const struct Rop_T postgresqlrops;
-extern const struct Pop_T postgresqlpops;
+extern const struct Rop_S postgresqlrops;
+extern const struct Pop_S postgresqlpops;
 
 
 /* ------------------------------------------------------- Private methods */

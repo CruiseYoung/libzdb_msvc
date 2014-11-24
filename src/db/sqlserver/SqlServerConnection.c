@@ -41,7 +41,7 @@
 
 
 #define T ConnectionDelegate_T
-struct T {
+struct ConnectionDelegate_S {
 	URL_T url;
 	SqlServer_T db;
 	int maxRows;
@@ -51,8 +51,8 @@ struct T {
 		StringBuffer_T err;
 };
 
-extern const struct Rop_T sqlserverrops;
-extern const struct Pop_T sqlserverpops;
+extern const struct Rop_S sqlserverrops;
+extern const struct Pop_S sqlserverpops;
 
 
 /* ------------------------------------------------------- Private methods */
@@ -154,7 +154,7 @@ static int setProperties(T C, char **error) {
 /* ------------------------------------------------------------ Operations */
 
 
-const struct Cop_T sqlservercops = {
+const struct Cop_S sqlservercops = {
     .name = "odbc",
     .onstop = onstop,
     .new = SqlServerConnection_new,

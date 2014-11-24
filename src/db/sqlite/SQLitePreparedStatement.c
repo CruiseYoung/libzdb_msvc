@@ -48,7 +48,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Pop_T sqlite3pops = {
+const struct Pop_S sqlite3pops = {
         .name           = "sqlite",
         .free           = SQLitePreparedStatement_free,
         .setString      = SQLitePreparedStatement_setString,
@@ -63,14 +63,14 @@ const struct Pop_T sqlite3pops = {
 };
 
 #define T PreparedStatementDelegate_T
-struct T {
+struct PreparedStatementDelegate_S {
         sqlite3 *db;
         int maxRows;
         int lastError;
 	sqlite3_stmt *stmt;
 };
 
-extern const struct Rop_T sqlite3rops;
+extern const struct Rop_S sqlite3rops;
 
 
 /* ----------------------------------------------------- Protected methods */

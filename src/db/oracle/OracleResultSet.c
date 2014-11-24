@@ -51,7 +51,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Rop_T oraclerops = {
+const struct Rop_S oraclerops = {
 	.name           = "oracle",
         .free           = OracleResultSet_free,
         .getColumnCount = OracleResultSet_getColumnCount,
@@ -63,7 +63,7 @@ const struct Rop_T oraclerops = {
         .getBlob        = OracleResultSet_getBlob
         // getTimestamp and getDateTime is handled in ResultSet
 };
-typedef struct column_t {
+typedef struct column_s {
         OCIDefine *def;
         int isNull;
         char *buffer;
@@ -72,8 +72,9 @@ typedef struct column_t {
         OCILobLocator *lob_loc;
         OCIDateTime   *date; 
 } *column_t;
+
 #define T ResultSetDelegate_T
-struct T {
+struct ResultSetDelegate_S {
         int         columnCount;
         int         row;
         ub4         maxRow;
@@ -235,7 +236,7 @@ T OracleResultSet_new(OCIStmt *stmt, OCIEnv *env, OCISession* usr, OCIError *err
         R->lastError = OCIAttrGet (R->stmt, OCI_HTYPE_STMT, &R->columnCount, NULL, OCI_ATTR_PARAM_COUNT, R->err);
         if (R->lastError != OCI_SUCCESS && R->lastError != OCI_SUCCESS_WITH_INFO)
                 DEBUG("OracleResultSet_new: Error %d, '%s'\n", R->lastError, OraclePreparedStatement_getLastError(R->lastError,R->err));
-        R->columns = CALLOC(R->columnCount, sizeof (struct column_t));
+        R->columns = CALLOC(R->columnCount, sizeof (struct column_s));
         if (!_initaleDefiningBuffers(R)) {
                 DEBUG("OracleResultSet_new: Error %d, '%s'\n", R->lastError, OraclePreparedStatement_getLastError(R->lastError,R->err));
                 R->row = -1;

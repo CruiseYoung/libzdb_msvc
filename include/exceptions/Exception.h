@@ -192,7 +192,6 @@
  */
 
 
-#define T Exception_T
 /** @cond hide */
 #include <pthread.h>
 #ifndef CLANG_ANALYZER_NORETURN
@@ -205,12 +204,14 @@
 #define ThreadData_T pthread_key_t
 #define ThreadData_set(key, value) pthread_setspecific((key), (value))
 #define ThreadData_get(key) pthread_getspecific((key))
-typedef struct T {
+
+#define T struct Exception_S
+struct Exception_S {
         const char *name;
-} T;
+} ;
 #define EXCEPTION_MESSAGE_LENGTH 512
-typedef struct Exception_Frame Exception_Frame;
-struct Exception_Frame {
+typedef struct Exception_Frame_S Exception_Frame;
+struct Exception_Frame_S {
 	int line;
 	jmp_buf env;
         const char *func;

@@ -52,7 +52,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Pop_T oraclepops = {
+const struct Pop_S oraclepops = {
         .name           = "oracle",
         .free           = OraclePreparedStatement_free,
         .setString      = OraclePreparedStatement_setString,
@@ -65,7 +65,7 @@ const struct Pop_T oraclepops = {
         .executeQuery   = OraclePreparedStatement_executeQuery,
         .rowsChanged    = OraclePreparedStatement_rowsChanged
 };
-typedef struct param_t {
+typedef struct param_s {
         union {
                 double real;
                 long integer;
@@ -77,8 +77,9 @@ typedef struct param_t {
         int length;
         OCIBind* bind;
 } *param_t;
+
 #define T PreparedStatementDelegate_T
-struct T {
+struct PreparedStatementDelegate_S {
         int         maxRows;
         ub4         paramCount;
         OCISession* usr;
@@ -91,7 +92,7 @@ struct T {
         ub4         rowsChanged;
 };
 
-extern const struct Rop_T oraclerops;
+extern const struct Rop_S oraclerops;
 
 
 /* ----------------------------------------------------- Protected methods */
@@ -121,7 +122,7 @@ T OraclePreparedStatement_new(OCIStmt *stmt, OCIEnv *env, OCISession* usr, OCIEr
         if (P->lastError != OCI_SUCCESS && P->lastError != OCI_SUCCESS_WITH_INFO)
                 P->paramCount = 0; 
         if (P->paramCount)
-                P->params = CALLOC(P->paramCount, sizeof(struct param_t));
+                P->params = CALLOC(P->paramCount, sizeof(struct param_s));
         return P;
 }
 

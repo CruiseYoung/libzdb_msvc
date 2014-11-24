@@ -53,7 +53,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Cop_T mysqlcops = {
+const struct Cop_S mysqlcops = {
         .name 		 	= "mysql",
         .onstop 	 	= MysqlConnection_onstop,
         .new 		 	= MysqlConnection_new,
@@ -73,7 +73,7 @@ const struct Cop_T mysqlcops = {
 };
 
 #define T ConnectionDelegate_T
-struct T {
+struct ConnectionDelegate_S {
         URL_T url;
 	MYSQL *db;
 	int maxRows;
@@ -83,8 +83,8 @@ struct T {
 };
 #define MYSQL_OK 0
 
-extern const struct Rop_T mysqlrops;
-extern const struct Pop_T mysqlpops;
+extern const struct Rop_S mysqlrops;
+extern const struct Pop_S mysqlpops;
 
 
 /* ------------------------------------------------------- Private methods */

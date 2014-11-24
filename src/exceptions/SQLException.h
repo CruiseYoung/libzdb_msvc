@@ -33,7 +33,7 @@
  * @see Exception.h
  * @file
  */
-extern Exception_T SQLException;
+extern struct Exception_S SQLException;
 
 
 #endif

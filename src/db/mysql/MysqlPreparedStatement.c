@@ -47,7 +47,7 @@
 
 #define MYSQL_OK 0
 
-const struct Pop_T mysqlpops = {
+const struct Pop_S mysqlpops = {
         .name           = "mysql",
         .free           = MysqlPreparedStatement_free,
         .setString      = MysqlPreparedStatement_setString,
@@ -61,7 +61,7 @@ const struct Pop_T mysqlpops = {
         .rowsChanged    = MysqlPreparedStatement_rowsChanged
 };
 
-typedef struct param_t {
+typedef struct param_s {
         union {
                 int integer;
                 long long llong;
@@ -72,7 +72,7 @@ typedef struct param_t {
 } *param_t;
 
 #define T PreparedStatementDelegate_T
-struct T {
+struct PreparedStatementDelegate_S {
         int maxRows;
         int lastError;
         param_t params;
@@ -83,7 +83,7 @@ struct T {
 
 static my_bool yes = true;
 
-extern const struct Rop_T mysqlrops;
+extern const struct Rop_S mysqlrops;
 
 
 /* ----------------------------------------------------- Protected methods */
@@ -101,7 +101,7 @@ T MysqlPreparedStatement_new(void *stmt, int maxRows, int parameterCount) {
         P->maxRows = maxRows;
         P->parameterCount = parameterCount;
         if (P->parameterCount > 0) {
-                P->params = CALLOC(P->parameterCount, sizeof(struct param_t));
+                P->params = CALLOC(P->parameterCount, sizeof(struct param_s));
                 P->bind = CALLOC(P->parameterCount, sizeof(MYSQL_BIND));
         }
         P->lastError = MYSQL_OK;

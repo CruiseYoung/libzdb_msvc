@@ -35,7 +35,7 @@
  * @see Exception.h, Mem.h
  * @file
  */
-extern Exception_T MemoryException;
+extern struct Exception_S MemoryException;
 
 
 #endif

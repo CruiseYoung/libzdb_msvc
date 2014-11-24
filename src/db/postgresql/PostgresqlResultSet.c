@@ -46,7 +46,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Rop_T postgresqlrops = {
+const struct Rop_S postgresqlrops = {
 	.name           = "postgresql",
         .free           = PostgresqlResultSet_free,
         .getColumnCount = PostgresqlResultSet_getColumnCount,
@@ -60,7 +60,7 @@ const struct Rop_T postgresqlrops = {
 };
 
 #define T ResultSetDelegate_T
-struct T {
+struct ResultSetDelegate_S {
         int maxRows;
         int currentRow;
         int columnCount;

@@ -49,7 +49,7 @@
 /* ----------------------------------------------------------- Definitions */
 
 
-const struct Cop_T sqlite3cops = {
+const struct Cop_S sqlite3cops = {
         .name 		 	= "sqlite",
         .onstop 	 	= SQLiteConnection_onstop,
         .new 		 	= SQLiteConnection_new,
@@ -69,7 +69,7 @@ const struct Cop_T sqlite3cops = {
 };
 
 #define T ConnectionDelegate_T
-struct T {
+struct ConnectionDelegate_S {
         URL_T url;
 	sqlite3 *db;
 	int maxRows;
@@ -78,8 +78,8 @@ struct T {
         StringBuffer_T sb;
 };
 
-extern const struct Rop_T sqlite3rops;
-extern const struct Pop_T sqlite3pops;
+extern const struct Rop_S sqlite3rops;
+extern const struct Pop_S sqlite3pops;
 
 
 /* ------------------------------------------------------- Private methods */

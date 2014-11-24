@@ -36,7 +36,7 @@
 /* ------------------------------------------------------------- Definitions */
 
 
-const struct Rop_T sqlserverrops = {
+const struct Rop_S sqlserverrops = {
     .name = "odbc",
     .free = SqlServerResultSet_free,
     .getColumnCount = SqlServerResultSet_getColumnCount,
@@ -49,7 +49,6 @@ const struct Rop_T sqlserverrops = {
     // getTimestamp and getDateTime is handled in ResultSet
 };
 
-#define T ResultSetDelegate_T
 
 enum enum_field_types {  SQL_TYPE_UNKNOWN_TYPE = 0,
 SQL_TYPE_CHAR = 1,
@@ -83,20 +82,21 @@ typedef struct SqlServer_Field_S {
 	void *extension;
 } ;
 
-typedef struct column_t {
+typedef struct column_s {
     struct SqlServer_Field_S field;
 	SQLLEN  real_length;
 	char *buffer;
 } *column_t;
 
-struct T {
+#define T ResultSetDelegate_T
+struct ResultSetDelegate_S {
 	int keep;
 	int maxRows;
 	int currentRow;
 	int columnCount;
 	SQLHSTMT stmt;
-	column_t columns;
-} ;
+    column_t columns;
+};
 
 #define TEST_INDEX \
 	int i; assert(R); i = columnIndex - 1; if (R->columnCount <= 0 || \
@@ -110,7 +110,7 @@ struct T {
 #pragma GCC visibility push(hidden)
 #endif
 
-static const char *SqlServerConnection_getLastError(void *stmt) {
+static const char *SqlServerResultSet_getLastError(void *stmt) {
 
 
 	unsigned char szSQLSTATE[10];
@@ -146,11 +146,11 @@ T SqlServerResultSet_new(void *stmt, int maxRows, int keep) {
 	R->columnCount = wclos;
 	if (!SQLSERVERSUCCESS(retcode))
 	{
-		SqlServerConnection_getLastError(stmt);
+        SqlServerResultSet_getLastError(stmt);
 		SqlServerResultSet_free(&R);
 		return NULL;
 	}
-    R->columns = CALLOC(R->columnCount, sizeof(struct column_t));
+    R->columns = CALLOC(R->columnCount, sizeof(struct column_s));
 
 	for(i = 1; i <= R->columnCount; i++) {
 		SQLSMALLINT ftype;
@@ -166,7 +166,7 @@ T SqlServerResultSet_new(void *stmt, int maxRows, int keep) {
 			&R->columns[i-1].field.decimals,
 			&R->columns[i-1].field.cannull); 
 		if (!SQLSERVERSUCCESS(retcode)) {
-			SqlServerConnection_getLastError(stmt);
+            SqlServerResultSet_getLastError(stmt);
 			SqlServerResultSet_free(&R);
 			return NULL;
 		}
@@ -196,7 +196,7 @@ T SqlServerResultSet_new(void *stmt, int maxRows, int keep) {
 			ftype = SQL_C_SBIGINT;
 			break;
 		default:
-			//SqlServerConnection_getLastError(stmt);
+			//SqlServerResultSet_getLastError(stmt);
 			//SqlServerResultSet_free(&R);
 			//THROW(SQLException, "Column type unknow ");
 			//return NULL;
@@ -212,7 +212,7 @@ T SqlServerResultSet_new(void *stmt, int maxRows, int keep) {
 			STRLEN,
 			&R->columns[i-1].real_length);
 		if (!SQLSERVERSUCCESS(retcode)) {
-			SqlServerConnection_getLastError(stmt);
+            SqlServerResultSet_getLastError(stmt);
 			SqlServerResultSet_free(&R);
 			return NULL;
 		}
@@ -270,7 +270,7 @@ int SqlServerResultSet_next(T R) {
 
 
 long SqlServerResultSet_getColumnSize(T R, int columnIndex) {
-	struct column_t* col;
+    column_t col;
 	TEST_INDEX
 	col =  &R->columns[i];
 	//	SQLNumResultCols(R->stmt,);
@@ -280,7 +280,7 @@ long SqlServerResultSet_getColumnSize(T R, int columnIndex) {
 
 
 const char *SqlServerResultSet_getString(T R, int columnIndex) {
-	struct column_t* col;
+    column_t col;
 	TEST_INDEX
 		//return (const char*)SqlServer3_column_text(R->stmt, i);
 		col =  &R->columns[i];

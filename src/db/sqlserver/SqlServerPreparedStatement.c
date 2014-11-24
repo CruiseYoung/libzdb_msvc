@@ -39,21 +39,21 @@
 	i < 0 || i >= P->paramCount) THROW(SQLException, "Parameter index is out of range"); 
 
 
-const struct Pop_T sqlserverpops = {
+const struct Pop_S sqlserverpops = {
     .name = "odbc",
     .free = SqlServerPreparedStatement_free,
     .setString = SqlServerPreparedStatement_setString,
     .setInt = SqlServerPreparedStatement_setInt,
     .setLLong = SqlServerPreparedStatement_setLLong,
     .setDouble = SqlServerPreparedStatement_setDouble,
-    /*.setTimestamp = */
+    /*.setTimestamp = SqlServerPreparedStatement_setTimestamp,*/
     .setBlob = SqlServerPreparedStatement_setBlob,
     .execute = SqlServerPreparedStatement_execute,
     .executeQuery = SqlServerPreparedStatement_executeQuery/*,
-    .rowsChanged = */
+    .rowsChanged = SqlServerPreparedStatement_rowsChanged*/
 };
 
-typedef struct param_t {
+typedef struct param_s {
 	union {
 		long integer;
 		long long int llong;
@@ -63,7 +63,7 @@ typedef struct param_t {
 } *param_t;
 
 #define T PreparedStatementDelegate_T
-struct T {
+struct PreparedStatementDelegate_S {
         SqlServer_T db;
         int maxRows;
         int lastError;
@@ -72,7 +72,7 @@ struct T {
 		SQLHSTMT stmt;
 };
 
-extern const struct Rop_T sqlserverrops;
+extern const struct Rop_S sqlserverrops;
 
 
 /* ----------------------------------------------------- Protected methods */
@@ -82,7 +82,7 @@ extern const struct Rop_T sqlserverrops;
 #pragma GCC visibility push(hidden)
 #endif
 #if _DEBUG
-static const char *SqlServerConnection_getLastError(void *stmt) {
+static const char *SqlServerPreparedStatement_getLastError(void *stmt) {
 
 
 	unsigned char szSQLSTATE[10];
@@ -115,7 +115,7 @@ T SqlServerPreparedStatement_new(SqlServer_T db, void *stmt, int maxRows) {
         P->lastError = SQL_SUCCESS;
 		P->lastError = SQLNumParams(stmt,&P->paramCount);
 		if (P->paramCount>0) {
-			P->params = CALLOC(P->paramCount, sizeof(struct param_t));
+			P->params = CALLOC(P->paramCount, sizeof(struct param_s));
 		}
         return P;
 }
@@ -243,7 +243,7 @@ void SqlServerPreparedStatement_execute(T P) {
 	if (!SQLSERVERSUCCESS(P->lastError))
 	{
 #if _DEBUG
-		SqlServerConnection_getLastError(P->stmt);
+        SqlServerPreparedStatement_getLastError(P->stmt);
 #endif
 		THROW(SQLException, "SqlServerPreparedStatement_execute error");
 	}

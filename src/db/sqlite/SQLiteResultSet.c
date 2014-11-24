@@ -45,7 +45,7 @@
 /* ------------------------------------------------------------- Definitions */
 
 
-const struct Rop_T sqlite3rops = {
+const struct Rop_S sqlite3rops = {
 	.name           = "sqlite",
         .free           = SQLiteResultSet_free,
         .getColumnCount = SQLiteResultSet_getColumnCount,
@@ -60,7 +60,7 @@ const struct Rop_T sqlite3rops = {
 };
 
 #define T ResultSetDelegate_T
-struct T {
+struct ResultSetDelegate_S {
         int keep;
         int maxRows;
 	int currentRow;

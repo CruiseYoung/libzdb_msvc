@@ -52,7 +52,7 @@
 
 /* ----------------------------------------------------------- Definitions */
 
-const struct Cop_T oraclesqlcops = {
+const struct Cop_S oraclesqlcops = {
         .name 		 	= "oracle",
         .onstop 	 	= OracleConnection_onstop,
         .new 		 	= OracleConnection_new,
@@ -75,7 +75,7 @@ const struct Cop_T oraclesqlcops = {
 #define ORACLE_TRANSACTION_PERIOD 10
 
 #define T ConnectionDelegate_T
-struct T {
+struct ConnectionDelegate_S {
         URL_T          url;
         OCIEnv*        env;
         OCIError*      err;
@@ -91,8 +91,8 @@ struct T {
         StringBuffer_T sb;
 };
 
-extern const struct Rop_T oraclerops;
-extern const struct Pop_T oraclepops;
+extern const struct Rop_S oraclerops;
+extern const struct Pop_S oraclepops;
 
 
 /* ------------------------------------------------------- Private methods */
