@@ -99,7 +99,6 @@ extern const struct Pop_S oraclepops;
 
 
 static int _doConnect(T C, URL_T url, char**  error) {
-#undef ERROR
 #define ERROR(e) do {*error = Str_dup(e); return false;} while (0)
 #define ORAERROR(e) do{ *error = Str_dup(OracleConnection_getLastError(e)); return false;} while(0)
         const char *database, *username, *password;

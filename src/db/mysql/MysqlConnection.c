@@ -91,7 +91,6 @@ extern const struct Pop_S mysqlpops;
 
 
 static MYSQL *_doConnect(URL_T url, char **error) {
-#undef ERROR
 #define ERROR(e) do {*error = Str_dup(e); goto error;} while (0)
         int port;
         my_bool yes = 1;
