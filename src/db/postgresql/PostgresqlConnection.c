@@ -87,7 +87,6 @@ extern const struct Pop_T postgresqlpops;
 
 
 static int _doConnect(T C, char **error) {
-#undef ERROR
 #define ERROR(e) do {*error = Str_dup(e); goto error;} while (0)
         /* User */
         if (URL_getUser(C->url))
