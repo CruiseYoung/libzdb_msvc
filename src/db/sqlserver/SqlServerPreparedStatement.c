@@ -34,9 +34,6 @@
 
 
 /* ----------------------------------------------------------- Definitions */
-#define TEST_INDEX \
-	int i; assert(P); i = parameterIndex - 1; if (P->paramCount <= 0 || \
-	i < 0 || i >= P->paramCount) THROW(SQLException, "Parameter index is out of range"); 
 
 
 const struct Pop_T sqlserverpops = {
@@ -46,11 +43,11 @@ const struct Pop_T sqlserverpops = {
     .setInt = SqlServerPreparedStatement_setInt,
     .setLLong = SqlServerPreparedStatement_setLLong,
     .setDouble = SqlServerPreparedStatement_setDouble,
-    /*.setTimestamp = */
+    /*.setTimestamp = SqlServerPreparedStatement_setTimestamp,*/
     .setBlob = SqlServerPreparedStatement_setBlob,
     .execute = SqlServerPreparedStatement_execute,
     .executeQuery = SqlServerPreparedStatement_executeQuery/*,
-    .rowsChanged = */
+    .rowsChanged = SqlServerPreparedStatement_rowsChanged*/
 };
 
 typedef struct param_t {
@@ -74,6 +71,10 @@ struct T {
 
 extern const struct Rop_T sqlserverrops;
 
+
+#define TEST_INDEX \
+	int i; assert(P); i = parameterIndex - 1; if (P->paramCount <= 0 || \
+	i < 0 || i >= P->paramCount) THROW(SQLException, "Parameter index is out of range"); 
 
 /* ----------------------------------------------------- Protected methods */
 

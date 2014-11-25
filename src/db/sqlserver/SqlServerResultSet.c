@@ -49,9 +49,9 @@ const struct Rop_T sqlserverrops = {
     // getTimestamp and getDateTime is handled in ResultSet
 };
 
-#define T ResultSetDelegate_T
 
-enum enum_field_types {  SQL_TYPE_UNKNOWN_TYPE = 0,
+enum enum_field_types {
+SQL_TYPE_UNKNOWN_TYPE = 0,
 SQL_TYPE_CHAR = 1,
 SQL_TYPE_NUMERIC = 2,
 SQL_TYPE_DECIMAL = 3,
@@ -89,6 +89,7 @@ typedef struct column_t {
 	char *buffer;
 } *column_t;
 
+#define T ResultSetDelegate_T
 struct T {
 	int keep;
 	int maxRows;
