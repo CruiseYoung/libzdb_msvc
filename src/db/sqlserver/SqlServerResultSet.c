@@ -50,7 +50,8 @@ const struct Rop_S sqlserverrops = {
 };
 
 
-enum enum_field_types {  SQL_TYPE_UNKNOWN_TYPE = 0,
+enum enum_field_types {
+SQL_TYPE_UNKNOWN_TYPE = 0,
 SQL_TYPE_CHAR = 1,
 SQL_TYPE_NUMERIC = 2,
 SQL_TYPE_DECIMAL = 3,

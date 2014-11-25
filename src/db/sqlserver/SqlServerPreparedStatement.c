@@ -34,10 +34,6 @@
 
 
 /* ----------------------------------------------------------- Definitions */
-#define TEST_INDEX \
-	int i; assert(P); i = parameterIndex - 1; if (P->paramCount <= 0 || \
-	i < 0 || i >= P->paramCount) THROW(SQLException, "Parameter index is out of range"); 
-
 
 const struct Pop_S sqlserverpops = {
     .name = "odbc",
@@ -74,6 +70,10 @@ struct PreparedStatementDelegate_S {
 
 extern const struct Rop_S sqlserverrops;
 
+
+#define TEST_INDEX \
+	int i; assert(P); i = parameterIndex - 1; if (P->paramCount <= 0 || \
+	i < 0 || i >= P->paramCount) THROW(SQLException, "Parameter index is out of range"); 
 
 /* ----------------------------------------------------- Protected methods */
 

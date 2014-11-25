@@ -40,6 +40,25 @@
 /* ----------------------------------------------------------- Definitions */
 
 
+const struct Cop_S sqlservercops = {
+    .name = "odbc",
+    .onstop = SqlServerConnection_onstop,
+    .new = SqlServerConnection_new,
+    .free = SqlServerConnection_free,
+    .setQueryTimeout = SqlServerConnection_setQueryTimeout,
+    .setMaxRows = SqlServerConnection_setMaxRows,
+    .ping = SqlServerConnection_ping,
+    .beginTransaction = SqlServerConnection_beginTransaction,
+    .commit = SqlServerConnection_commit,
+    .rollback = SqlServerConnection_rollback,
+    .lastRowId = SqlServerConnection_lastRowId,
+    .rowsChanged = SqlServerConnection_rowsChanged,
+    .execute = SqlServerConnection_execute,
+    .executeQuery = SqlServerConnection_executeQuery,
+    .prepareStatement = SqlServerConnection_prepareStatement,
+    .getLastError = SqlServerConnection_getLastError
+};
+
 #define T ConnectionDelegate_T
 struct ConnectionDelegate_S {
 	URL_T url;
@@ -75,13 +94,6 @@ static void getSqlErr(T C,SQLHSTMT hstmt) {
 	StringBuffer_append(C->err,"%s",szData);
 
 }
-
-/* SqlServer3 client library finalization */
-static void onstop(void) {
-	//SqlServer3_close();
-	// SqlServer3_shutdown();
-}
-
 
 
 static SqlServer_T doConnect(URL_T url, char **error) {
@@ -149,29 +161,6 @@ static int setProperties(T C, char **error) {
 	}*/
 	return true;
 }
-
-
-/* ------------------------------------------------------------ Operations */
-
-
-const struct Cop_S sqlservercops = {
-    .name = "odbc",
-    .onstop = onstop,
-    .new = SqlServerConnection_new,
-    .free = SqlServerConnection_free,
-    .setQueryTimeout = SqlServerConnection_setQueryTimeout,
-    .setMaxRows = SqlServerConnection_setMaxRows,
-    .ping = SqlServerConnection_ping,
-    .beginTransaction = SqlServerConnection_beginTransaction,
-    .commit = SqlServerConnection_commit,
-    .rollback = SqlServerConnection_rollback,
-    .lastRowId = SqlServerConnection_lastRowId,
-    .rowsChanged = SqlServerConnection_rowsChanged,
-    .execute = SqlServerConnection_execute,
-    .executeQuery = SqlServerConnection_executeQuery,
-    .prepareStatement = SqlServerConnection_prepareStatement,
-    .getLastError = SqlServerConnection_getLastError
-};
 
 
 /* ----------------------------------------------------- Protected methods */
@@ -344,6 +333,15 @@ PreparedStatement_T SqlServerConnection_prepareStatement(T C, const char *sql, v
 const char *SqlServerConnection_getLastError(T C) {
 	return C->err;
 }
+
+/* Class Method: SQL Server client library finalization */
+
+/* SqlServer3 client library finalization */
+static void SqlServerConnection_onstop(void) {
+    //SqlServer3_close();
+    // SqlServer3_shutdown();
+}
+
 
 #ifdef PACKAGE_PROTECTED
 #pragma GCC visibility pop
