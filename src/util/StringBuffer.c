@@ -102,7 +102,7 @@ static int _prepare_StringBuffer(T S, char prefix) {
 }
 
 
-static inline T _ctor(int hint) {
+static inline T _ctor_StringBuffer(int hint) {
         T S;
         NEW(S);
         S->length = hint;
@@ -120,14 +120,14 @@ static inline T _ctor(int hint) {
 #endif
 
 T StringBuffer_new(const char *s) {
-        return StringBuffer_append(_ctor(STRLEN), "%s", s);
+    return StringBuffer_append(_ctor_StringBuffer(STRLEN), "%s", s);
 }
 
 
 T StringBuffer_create(int hint) {
         if (hint <= 0)
                 THROW(AssertException, "Illegal hint value");
-        return _ctor(hint);
+        return _ctor_StringBuffer(hint);
 }
 
 
