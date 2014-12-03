@@ -409,7 +409,7 @@ const char *URL_getParameter(T U, const char *name) {
 const char *URL_toString(T U) {
 	assert(U);
 	if (! U->toString) {
-                uchar_t port[11] = {};
+                uchar_t port[11] = {0};
                 if (U->portStr) // port seen in URL
                         snprintf(port, 10, ":%d", U->port);
 		U->toString = Str_cat("%s://%s%s%s%s%s%s%s%s%s%s%s",
