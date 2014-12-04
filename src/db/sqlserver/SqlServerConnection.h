@@ -29,6 +29,8 @@ int SqlServerConnection_execute(T C, const char *sql, va_list ap);
 ResultSet_T SqlServerConnection_executeQuery(T C, const char *sql, va_list ap);
 PreparedStatement_T SqlServerConnection_prepareStatement(T C, const char *sql, va_list ap);
 const char *SqlServerConnection_getLastError(T C);
+/* Event handlers */
+void SqlServerConnection_onstop(void);
 #undef T
 #endif
 
