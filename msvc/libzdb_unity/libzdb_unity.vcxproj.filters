@@ -13,6 +13,40 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{e0081ec3-53a5-4fe8-bc20-69c0d9a86ef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\system">
+      <UniqueIdentifier>{a5c76f51-46b7-41d7-9c51-c5166a9863cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\net">
+      <UniqueIdentifier>{f5697ed5-844e-4dcc-9ff5-dd83c7049bbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\exceptions">
+      <UniqueIdentifier>{d99ced36-a34d-46d2-82e5-96d488dd96d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\db">
+      <UniqueIdentifier>{161a7a54-b9cc-4121-94c3-6a903fe1034d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\db\mysql">
+      <UniqueIdentifier>{51ba5eed-e91d-421c-9621-7e6d312f30e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\db\oracle">
+      <UniqueIdentifier>{d30f6849-8a77-47a9-9d5a-5e976e274beb}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files\db\postgresql">
+      <UniqueIdentifier>{5646490b-7b0f-43c3-ab90-6a31e6eef6ed}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files\db\sqlite">
+      <UniqueIdentifier>{b21dc213-3c54-4037-b404-295c9bdc9b7a}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files\db\sqlserver">
+      <UniqueIdentifier>{2129e2b4-6488-49cf-8868-63cdc2cb6715}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -21,8 +55,100 @@
     <ClCompile Include="..\..\test\libzdb_unity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\zdb.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\..\src\net\URL.c">
+      <Filter>Source Files\net</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\exceptions\assert.c">
+      <Filter>Source Files\exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\exceptions\Exception.c">
+      <Filter>Source Files\exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\system\gettimeofday.c">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\system\Mem.c">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\system\System.c">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\system\Time.c">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\Str.c">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\StringBuffer.c">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\util\Vector.c">
+      <Filter>Source Files\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\Connection.c">
+      <Filter>Source Files\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\ConnectionPool.c">
+      <Filter>Source Files\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\PreparedStatement.c">
+      <Filter>Source Files\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\ResultSet.c">
+      <Filter>Source Files\db</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlConnection.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlPreparedStatement.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\mysql\MysqlResultSet.c">
+      <Filter>Source Files\db\mysql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlserver\SqlServerConnection.c">
+      <Filter>Source Files\db\sqlserver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlserver\SqlServerPreparedStatement.c">
+      <Filter>Source Files\db\sqlserver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlserver\SqlServerResultSet.c">
+      <Filter>Source Files\db\sqlserver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlite\SQLiteConnection.c">
+      <Filter>Source Files\db\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlite\SQLitePreparedStatement.c">
+      <Filter>Source Files\db\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\sqlite\SQLiteResultSet.c">
+      <Filter>Source Files\db\sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\postgresql\PostgresqlConnection.c">
+      <Filter>Source Files\db\postgresql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\postgresql\PostgresqlPreparedStatement.c">
+      <Filter>Source Files\db\postgresql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\postgresql\PostgresqlResultSet.c">
+      <Filter>Source Files\db\postgresql</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\oracle\OracleConnection.c">
+      <Filter>Source Files\db\oracle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\oracle\OraclePreparedStatement.c">
+      <Filter>Source Files\db\oracle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\db\oracle\OracleResultSet.c">
+      <Filter>Source Files\db\oracle</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\net\URL.re">
+      <Filter>Source Files\net</Filter>
+    </None>
+    <None Include="..\..\src\system\Time.re">
+      <Filter>Source Files\system</Filter>
+    </None>
   </ItemGroup>
 </Project>

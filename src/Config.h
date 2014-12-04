@@ -52,7 +52,7 @@
 //#define HAVE_LIBPQ
 //#define HAVE_LIBSQLITE3
 //#define HAVE_ORACLE
-//#define HAVE_SQLSERVER
+#define HAVE_SQLSERVER
 
 
 /* Version number of package */

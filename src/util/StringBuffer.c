@@ -74,7 +74,7 @@ static inline void _append(T S, const char *s, va_list ap) {
 
 
 /* Replace all occurences of ? in this string buffer with prefix[1..99] */
-static int _prepare_StringBuffer(T S, char prefix) {
+static int _prepare(T S, char prefix) {
         int n, i;
         for (n = i = 0; S->buffer[i]; i++) if (S->buffer[i] == '?') n++;
         if (n > 99)
@@ -102,7 +102,7 @@ static int _prepare_StringBuffer(T S, char prefix) {
 }
 
 
-static inline T _ctor_StringBuffer(int hint) {
+static inline T _ctor(int hint) {
         T S;
         NEW(S);
         S->length = hint;
@@ -120,14 +120,14 @@ static inline T _ctor_StringBuffer(int hint) {
 #endif
 
 T StringBuffer_new(const char *s) {
-    return StringBuffer_append(_ctor_StringBuffer(STRLEN), "%s", s);
+    return StringBuffer_append(_ctor(STRLEN), "%s", s);
 }
 
 
 T StringBuffer_create(int hint) {
         if (hint <= 0)
                 THROW(AssertException, "Illegal hint value");
-        return _ctor_StringBuffer(hint);
+        return _ctor(hint);
 }
 
 
@@ -210,13 +210,13 @@ const char *StringBuffer_toString(T S) {
 
 int StringBuffer_prepare4postgres(T S) {
         assert(S);
-        return _prepare_StringBuffer(S, '$');
+        return _prepare(S, '$');
 }
 
 
 int StringBuffer_prepare4oracle(T S) {
         assert(S);
-        return _prepare_StringBuffer(S, ':');
+        return _prepare(S, ':');
 }
 
 
