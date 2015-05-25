@@ -35,7 +35,7 @@
 
 /* ----------------------------------------------------------- Definitions */
 
-const struct Pop_S sqlserverpops = {
+const struct Pop_T sqlserverpops = {
     .name = "odbc",
     .free = SqlServerPreparedStatement_free,
     .setString = SqlServerPreparedStatement_setString,
