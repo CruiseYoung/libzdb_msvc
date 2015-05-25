@@ -96,8 +96,8 @@ struct T {
 	int currentRow;
 	int columnCount;
 	SQLHSTMT stmt;
-	column_t columns;
-} ;
+    column_t columns;
+};
 
 #define TEST_INDEX \
 	int i; assert(R); i = columnIndex - 1; if (R->columnCount <= 0 || \
