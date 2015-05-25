@@ -77,7 +77,6 @@ typedef struct param_s {
         int length;
         OCIBind* bind;
 } *param_t;
-
 #define T PreparedStatementDelegate_T
 struct PreparedStatementDelegate_S {
         int         maxRows;

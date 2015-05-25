@@ -204,7 +204,6 @@
 #define ThreadData_T pthread_key_t
 #define ThreadData_set(key, value) pthread_setspecific((key), (value))
 #define ThreadData_get(key) pthread_getspecific((key))
-
 #define T struct Exception_S
 struct Exception_S {
         const char *name;

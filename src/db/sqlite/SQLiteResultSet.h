@@ -29,7 +29,7 @@
 
 
 #if defined SQLITEUNLOCK && SQLITE_VERSION_NUMBER >= 3006012
-/* SQLite unlock notify based synchronization */ 
+/* SQLite unlock notify based synchronization */
 struct UnlockNotification_S {
         int fired;
         Sem_T cond;

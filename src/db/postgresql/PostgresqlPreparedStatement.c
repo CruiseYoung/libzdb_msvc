@@ -65,7 +65,6 @@ const struct Pop_S postgresqlpops = {
 typedef struct param_s {
         char s[65];
 } *param_t;
-
 #define T PreparedStatementDelegate_T
 struct PreparedStatementDelegate_S {
         int maxRows;

@@ -72,7 +72,6 @@ typedef struct column_s {
         OCILobLocator *lob_loc;
         OCIDateTime   *date; 
 } *column_t;
-
 #define T ResultSetDelegate_T
 struct ResultSetDelegate_S {
         int         columnCount;
