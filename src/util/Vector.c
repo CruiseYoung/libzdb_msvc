@@ -90,7 +90,7 @@ void Vector_insert(T V, int i, void *e) {
 	assert(V);
 	assert(i >= 0 && i <= V->length);
 	V->timestamp++;
-    _ensureCapacity(V);
+        _ensureCapacity(V);
         for (int j = V->length++; j > i; j--)
                 V->array[j] = V->array[j-1];
         V->array[i] = e;
@@ -129,7 +129,7 @@ void *Vector_remove(T V, int i) {
 void Vector_push(T V, void *e) {
         assert(V);
 	V->timestamp++;
-    _ensureCapacity(V);
+        _ensureCapacity(V);
         V->array[V->length++] = e;
 }
 
